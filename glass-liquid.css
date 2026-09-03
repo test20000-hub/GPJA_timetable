@@ -6,7 +6,8 @@ body:before{content:"";position:fixed;inset:-20%;z-index:-1;background:radial-gr
 .app{padding-top:30px!important}
 .card,.week-card,.schedule-toolbar,.notification-card{background:var(--glass-bg)!important;border:1px solid var(--glass-border)!important;box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.8)!important;backdrop-filter:blur(24px) saturate(155%);-webkit-backdrop-filter:blur(24px) saturate(155%)}
 .card{border-radius:28px!important}
-.brand-mark{background:rgba(255,255,255,.55)!important;color:#1263c9!important;border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 30px rgba(42,104,180,.16)!important;backdrop-filter:blur(18px)}
+.brand-mark{background:rgba(255,255,255,.55)!important;color:#1263c9!important;border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 30px rgba(42,104,180,.16)!important;backdrop-filter:blur(18px);overflow:hidden!important;flex:0 0 50px;position:relative}
+.brand-logo{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important}
 .icon-btn,.control-group,.today-item,.head,.period-cell,.view-switch,.view-btn.active,.calendar-cell,.schedule-date,.schedule-item{background:rgba(255,255,255,.46)!important;border-color:rgba(255,255,255,.7)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
 .icon-btn{border-radius:18px!important}
 .app-tabs{background:rgba(255,255,255,.35)!important;border:1px solid rgba(255,255,255,.65);border-radius:19px!important;backdrop-filter:blur(18px)}
@@ -31,9 +32,7 @@ body:before{content:"";position:fixed;inset:-20%;z-index:-1;background:radial-gr
 .calendar-event{background:rgba(255,255,255,.52)!important;border-left-color:#3b9cff!important}
 .schedule-day{background:rgba(255,255,255,.3)!important}.schedule-day.schedule-today{border-color:rgba(103,171,255,.65)!important}
 footer{color:#6d86a2!important}
-@media(max-width:700px){.app{padding-top:18px!important}.card{border-radius:24px!important}}
-
-/* Dark Liquid Glass overrides: must come after the light glass layer because the base rules use !important. */
+@media(max-width:700px){.app{padding-top:18px!important}.card{border-radius:24px!important}.brand-mark{flex-basis:44px}}
 html.dark{background:#05070b!important}
 html.dark body{color:#f5f7fb!important;background:radial-gradient(circle at 12% -5%,rgba(80,140,255,.16),transparent 32%),radial-gradient(circle at 88% 8%,rgba(180,120,255,.12),transparent 28%),linear-gradient(180deg,#0a0d14 0,#070a10 45%,#05070b 100%)!important;background-attachment:fixed!important}
 html.dark body:before{background:radial-gradient(circle at 30% 35%,rgba(90,140,255,.12),transparent 24%),radial-gradient(circle at 70% 70%,rgba(150,90,255,.1),transparent 25%)!important}
