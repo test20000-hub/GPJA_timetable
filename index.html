@@ -1,1 +1,25 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827"><meta name="description" content="군포중앙고등학교 NEIS 시간표 PWA"><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon-192.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css"><title>군포중앙고 시간표</title></head><body><header class="topbar"><div><p class="eyebrow">NEIS TIMETABLE</p><h1>군포중앙고등학교</h1></div><button id="settingsBtn" class="icon-btn" aria-label="설정">⚙</button></header><main class="container"><section class="controls card"><div class="field"><label for="grade">학년</label><select id="grade"><option value="1">1학년</option><option value="2">2학년</option><option value="3">3학년</option></select></div><div class="field"><label for="classNo">반</label><select id="classNo"></select></div><button id="loadBtn" class="primary">시간표 불러오기</button></section><section class="datebar"><button id="prevBtn" class="round-btn" aria-label="이전 평일">‹</button><button id="todayBtn" class="today-btn">오늘</button><div class="date-title"><strong id="dateText">-</strong><span id="weekdayText">-</span></div><button id="nextBtn" class="round-btn" aria-label="다음 평일">›</button></section><div id="status" class="status"></div><section id="timetable" class="timetable"></section><section class="source-note"><span>교육부 나이스(NEIS) 교육정보 개방 포털</span><span id="lastUpdated"></span></section></main><dialog id="settingsDialog"><form method="dialog" class="dialog-card"><div class="dialog-head"><h2>설정</h2><button value="cancel" class="icon-btn" aria-label="닫기">✕</button></div><label class="field"><span>NEIS API 인증키</span><input id="apiKey" type="password" autocomplete="off" placeholder="발급받은 API 키"></label><p class="hint">키는 이 기기의 localStorage에만 저장되며 GitHub 저장소에는 포함되지 않습니다.</p><div class="dialog-actions"><button id="clearKeyBtn" type="button" class="secondary">키 삭제</button><button id="saveKeyBtn" type="submit" class="primary">저장</button></div></form></dialog><script src="./app.js" defer></script></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="description" content="군포중앙고등학교 시간표" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <title>군포중앙고 시간표</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar"><div><p class="eyebrow">GPJA TIMETABLE</p><h1>군포중앙고등학교</h1></div><button id="installBtn" class="icon-btn" hidden aria-label="앱 설치">＋</button></header>
+    <section class="toolbar card"><button id="prevWeek" class="nav-btn" aria-label="이전 주">‹</button><div class="date-heading"><strong id="weekLabel">시간표</strong><span id="updatedLabel">불러오는 중…</span></div><button id="nextWeek" class="nav-btn" aria-label="다음 주">›</button></section>
+    <section class="controls"><label class="select-wrap"><span>학년</span><select id="gradeSelect"></select></label><label class="select-wrap"><span>반</span><select id="classSelect"></select></label><button id="todayBtn" class="today-btn">오늘</button></section>
+    <section id="notice" class="notice" hidden></section>
+    <section id="todayCard" class="today-card card" hidden></section>
+    <section id="timetable" class="timetable card" aria-live="polite"></section>
+  </main>
+  <footer>NEIS 고등학교시간표 · 군포중앙고등학교</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
