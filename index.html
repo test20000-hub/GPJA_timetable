@@ -7,7 +7,7 @@
   <meta name="description" content="군포중앙고등학교 시간표" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=8" />
   <title>군포중앙고 시간표</title>
 </head>
 <body>
@@ -51,6 +51,11 @@
       <button id="todayBtn" class="today-btn"><span>●</span> 이번 주</button>
     </section>
 
+    <section class="notification-card card">
+      <div><strong>쉬는 시간 알림</strong><small id="notificationStatus">다음 교시 시작 전에 알림을 받을 수 있습니다.</small></div>
+      <button id="notificationBtn" class="notification-btn">알림 켜기</button>
+    </section>
+
     <section id="notice" class="notice" hidden></section>
     <section id="todayCard" class="today-card card" hidden></section>
 
@@ -62,6 +67,7 @@
       <div class="legend" aria-label="시간표 표시 안내">
         <span><i class="legend-dot changed-dot"></i>변경</span>
         <span><i class="legend-bar subject-bar"></i>과목</span>
+        <span><i class="legend-current"></i>현재</span>
       </div>
     </section>
     <section id="timetable" class="timetable card" aria-live="polite"></section>
@@ -70,9 +76,9 @@
   <footer>
     <div class="footer-inner">
       <div>NEIS 고등학교시간표 · 군포중앙고등학교<br><small>© 2026 GPJA Timetable. All rights reserved.</small></div>
-      <span class="version">v1.0.0</span>
+      <span class="version">v1.1.0</span>
     </div>
   </footer>
-  <script src="app.js?v=6" defer></script>
+  <script src="app.js?v=7" defer></script>
 </body>
 </html>
