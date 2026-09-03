@@ -10,6 +10,13 @@ OFFICE_CODE = 'J10'
 SCHOOL_CODE = '7531272'
 EXPECTED_SCHOOL_NAME = '군포중앙고등학교'
 
+# Temporary teacher mapping until a reliable school timetable teacher feed is connected.
+TEACHER_BY_SUBJECT = {
+    '국어': '김미경', '정보': '김기현', '영어': '여국화', '수학': '송희영',
+    '과학': '편문희', '진로': '김희정', '체육': '채승희', '사회': '김수진',
+    '한국사': '서지연', '과학탐구실험': '손지영',
+}
+
 
 def school_year():
     now = datetime.now()
@@ -99,13 +106,13 @@ def normalize_date(value):
     return ''
 
 
-def teacher_name(row):
-    # NEIS timetable feeds can expose teacher names under different optional keys.
+def teacher_name(row, subject):
+    # Prefer an actual teacher field if a future timetable feed supplies one.
     for key in ('TCHR_NM', 'TEACHER_NM', 'TEACH_NM', 'TEACHER', 'TCHR'):
         value = str(row.get(key, '') or '').strip()
         if value:
             return value
-    return ''
+    return TEACHER_BY_SUBJECT.get(subject, '')
 
 
 def load_previous(path):
@@ -187,7 +194,7 @@ def main():
             'period': period,
             'subject': subject,
             'room': str(r.get('CLRM_NM', '') or '').strip(),
-            'teacher': teacher_name(r),
+            'teacher': teacher_name(r, subject),
             'course': str(r.get('ORD_SC_NM', '') or '').strip(),
             'department': str(r.get('DDDEP_NM', '') or '').strip(),
         }
@@ -210,9 +217,10 @@ def main():
     out = {
         'rows': normalized,
         'updatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
-        'source': 'NEIS 고등학교시간표',
+        'source': 'NEIS 고등학교시간표 + 지정 교사 매핑',
         'schoolYear': school_year(),
         'school': {'name': EXPECTED_SCHOOL_NAME, 'officeCode': OFFICE_CODE, 'schoolCode': SCHOOL_CODE},
+        'teacherSource': '사용자 지정 과목별 교사 매핑(컴시간 연동 전 임시 적용)',
         'dateRange': {'from': dates[0], 'to': dates[-1]},
         'changeCount': changed_count,
     }
