@@ -18,52 +18,43 @@ class TimetableWidget : AppWidgetProvider() {
 
     companion object {
         private const val PREFS = "widget_prefs"
-        private const val STYLE = "style"
 
         fun update(context: Context, manager: AppWidgetManager, ids: IntArray) {
             val now = LocalTime.now()
             val current = currentPeriod(now)
             val next = nextPeriod(now)
-            val style = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-                .getString(STYLE, "classic") ?: "classic"
+            val prefs = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
 
-            val views = RemoteViews(context.packageName, R.layout.widget_layout)
-            applyStyle(views, style)
-            views.setTextViewText(R.id.widget_school, "군포중앙고 · 1학년 5반")
-
-            when {
-                current != null -> {
-                    views.setTextViewText(R.id.widget_title, "${current}교시 진행 중")
-                    views.setTextViewText(R.id.widget_time, "${format(startTime(current))}–${format(endTime(current))}")
-                    views.setTextViewText(R.id.widget_subject, "시간표를 열어 과목을 확인하세요.")
+            ids.forEach { appWidgetId ->
+                val style = prefs.getString("style_$appWidgetId", "light") ?: "light"
+                val views = RemoteViews(context.packageName, R.layout.widget_layout)
+                applyStyle(views, style)
+                views.setTextViewText(R.id.widget_school, "군포중앙고 · 1학년 5반")
+                when {
+                    current != null -> {
+                        views.setTextViewText(R.id.widget_title, "${current}교시 진행 중")
+                        views.setTextViewText(R.id.widget_time, "${format(startTime(current))}–${format(endTime(current))}")
+                        views.setTextViewText(R.id.widget_subject, "시간표를 열어 과목을 확인하세요.")
+                    }
+                    next != null -> {
+                        views.setTextViewText(R.id.widget_title, "다음 ${next}교시")
+                        views.setTextViewText(R.id.widget_time, "${format(startTime(next))}–${format(endTime(next))}")
+                        views.setTextViewText(R.id.widget_subject, "시간표를 열어 과목을 확인하세요.")
+                    }
+                    else -> {
+                        views.setTextViewText(R.id.widget_title, "오늘 수업 종료")
+                        views.setTextViewText(R.id.widget_time, "")
+                        views.setTextViewText(R.id.widget_subject, "오늘 수업이 모두 끝났습니다.")
+                    }
                 }
-                next != null -> {
-                    views.setTextViewText(R.id.widget_title, "다음 ${next}교시")
-                    views.setTextViewText(R.id.widget_time, "${format(startTime(next))}–${format(endTime(next))}")
-                    views.setTextViewText(R.id.widget_subject, "시간표를 열어 과목을 확인하세요.")
-                }
-                else -> {
-                    views.setTextViewText(R.id.widget_title, "오늘 수업 종료")
-                    views.setTextViewText(R.id.widget_time, "")
-                    views.setTextViewText(R.id.widget_subject, "오늘 수업이 모두 끝났습니다.")
-                }
+                manager.updateAppWidget(appWidgetId, views)
             }
-
-            ids.forEach { manager.updateAppWidget(it, views) }
-        }
-
-        fun saveStyle(context: Context, style: String) {
-            context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-                .edit().putString(STYLE, style).apply()
-            val manager = AppWidgetManager.getInstance(context)
-            update(context, manager, manager.getAppWidgetIds(
-                android.content.ComponentName(context, TimetableWidget::class.java)
-            ))
         }
 
         private fun applyStyle(views: RemoteViews, style: String) {
             val (background, primary, secondary, titleSize, padding) = when (style) {
                 "dark" -> Style(Color.rgb(25, 25, 28), Color.WHITE, Color.LTGRAY, 20f, 16)
+                "color" -> Style(Color.rgb(225, 240, 255), Color.rgb(15, 55, 95), Color.rgb(55, 95, 130), 20f, 16)
                 "minimal" -> Style(Color.rgb(245, 245, 245), Color.rgb(30, 30, 30), Color.rgb(100, 100, 100), 18f, 12)
                 else -> Style(Color.WHITE, Color.rgb(17, 17, 17), Color.rgb(100, 100, 100), 20f, 16)
             }
