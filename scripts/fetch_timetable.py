@@ -3,7 +3,8 @@ import os
 import re
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from collections import Counter
+from datetime import datetime, timezone, timedelta
 
 KEY = os.environ.get('NEIS_API_KEY', '').strip()
 BASE = 'https://open.neis.go.kr/hub/hisTimetable'
@@ -132,6 +133,14 @@ def timetable_key(row):
     return (str(row.get('date', '')), str(row.get('grade', '')), str(row.get('className', '')), str(row.get('period', '')))
 
 
+def slot_key(row):
+    try:
+        weekday = datetime.strptime(str(row['date']), '%Y-%m-%d').weekday()
+    except (KeyError, ValueError):
+        weekday = -1
+    return (weekday, str(row.get('grade', '')), str(row.get('className', '')), str(row.get('period', '')))
+
+
 def signature(row):
     return (
         str(row.get('subject') or '').strip(),
@@ -140,26 +149,64 @@ def signature(row):
     )
 
 
-def add_change_metadata(normalized, previous_rows):
-    """Mark changes only when the same date/grade/class/period changed in the previous generated file.
-
-    Do not infer changes from neighboring weeks: regular rotating/alternating schedules can
-    legitimately differ by week and must not be displayed as timetable changes.
-    """
-    previous_by_key = {}
-    for previous in previous_rows:
-        key = timetable_key(previous)
-        if key not in previous_by_key:
-            previous_by_key[key] = previous
-
-    changed = 0
+def build_weekly_baseline(normalized):
+    groups = {}
     for row in normalized:
-        old = previous_by_key.get(timetable_key(row))
-        if not old:
+        groups.setdefault(slot_key(row), []).append(row)
+
+    baseline = {}
+    for key, rows in groups.items():
+        by_date = {str(r.get('date')): r for r in rows}
+        for row in rows:
+            try:
+                current_date = datetime.strptime(str(row['date']), '%Y-%m-%d')
+            except (KeyError, ValueError):
+                continue
+
+            neighbors = []
+            for weeks in (1, 2, 3):
+                for delta in (-7 * weeks, 7 * weeks):
+                    neighbor_date = (current_date + timedelta(days=delta)).strftime('%Y-%m-%d')
+                    neighbor = by_date.get(neighbor_date)
+                    if neighbor:
+                        neighbors.append(neighbor)
+
+            counts = Counter(signature(r) for r in neighbors)
+            if not counts:
+                continue
+            best_sig, best_count = counts.most_common(1)[0]
+            if best_count >= 2 and signature(row) != best_sig:
+                baseline[timetable_key(row)] = best_sig
+
+    return baseline
+
+
+def add_change_metadata(normalized, previous_rows):
+    baseline = build_weekly_baseline(normalized)
+    changed = 0
+
+    for row in normalized:
+        old = baseline.get(timetable_key(row))
+        if old is None:
+            for previous in previous_rows:
+                if timetable_key(previous) != timetable_key(row):
+                    continue
+                previous_change = previous.get('change') or {}
+                if previous_change.get('previousSubject'):
+                    old = (
+                        str(previous_change.get('previousSubject') or '').strip(),
+                        str(previous_change.get('previousRoom') or '').strip(),
+                        str(previous_change.get('previousTeacher') or '').strip(),
+                    )
+                break
+
+        if old is None:
             continue
 
-        old_subject, old_room, old_teacher = signature(old)
-        new_subject, new_room, new_teacher = signature(row)
+        old_subject, old_room, old_teacher = old
+        new_subject = str(row.get('subject') or '').strip()
+        new_room = str(row.get('room') or '').strip()
+        new_teacher = str(row.get('teacher') or '').strip()
         subject_changed = old_subject != new_subject
         room_changed = old_room != new_room
         teacher_changed = bool(old_teacher and new_teacher and old_teacher != new_teacher)
