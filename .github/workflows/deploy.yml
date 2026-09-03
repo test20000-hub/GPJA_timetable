@@ -1,4 +1,5 @@
 name: Update timetable and deploy Pages
+
 on:
   workflow_dispatch:
   schedule:
@@ -7,43 +8,69 @@ on:
     branches: [main]
     paths-ignore:
       - 'data/timetable.json'
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: false
+
 jobs:
-  update-data:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Fetch NEIS timetable
-        env:
-          NEIS_API_KEY: ${{ secrets.NEIS_API_KEY }}
-        run: python scripts/fetch_timetable.py
-      - name: Commit timetable data
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/timetable.json
-          git diff --cached --quiet || git commit -m 'chore: update timetable data'
-          git push
-  deploy:
-    needs: update-data
+  build-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch NEIS timetable
+        env:
+          NEIS_API_KEY: ${{ secrets.NEIS_API_KEY }}
+        run: python scripts/fetch_timetable.py
+
+      - name: Validate generated data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('data/timetable.json')
+          if not p.exists():
+              raise SystemExit('data/timetable.json was not generated')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          rows = data.get('rows', [])
+          print(f'Generated timetable rows: {len(rows)}')
+          if not rows:
+              raise SystemExit('NEIS returned no timetable rows')
+          print('Sample:', rows[0])
+          PY
+
+      - name: Commit timetable data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/timetable.json
+          if git diff --cached --quiet; then
+            echo 'No timetable data changes.'
+          else
+            git commit -m 'chore: update timetable data'
+            git push
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Upload artifact
+
+      - name: Upload generated site
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
