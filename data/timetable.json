@@ -7,9 +7,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-09",
@@ -205,9 +211,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-09",
@@ -304,9 +316,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-09",
@@ -1965,9 +1983,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-10",
@@ -2108,9 +2132,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-10",
@@ -3802,9 +3832,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-11",
@@ -5034,9 +5070,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-12",
@@ -5078,9 +5120,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-12",
@@ -5199,9 +5247,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-12",
@@ -5243,9 +5297,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-12",
@@ -6816,9 +6876,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-13",
@@ -6915,9 +6981,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-13",
@@ -9456,9 +9528,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-16",
@@ -9654,9 +9732,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-16",
@@ -9753,9 +9837,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-16",
@@ -11414,9 +11504,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-17",
@@ -11557,9 +11653,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-17",
@@ -13251,9 +13353,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-18",
@@ -14483,9 +14591,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-19",
@@ -14527,9 +14641,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-19",
@@ -14648,9 +14768,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-19",
@@ -14692,9 +14818,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-19",
@@ -16265,9 +16397,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-20",
@@ -16364,9 +16502,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-20",
@@ -18905,9 +19049,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-23",
@@ -19103,9 +19253,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-23",
@@ -19202,9 +19358,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-23",
@@ -20863,9 +21025,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-24",
@@ -21006,9 +21174,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-24",
@@ -22700,9 +22874,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-25",
@@ -24101,9 +24281,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-26",
@@ -24145,9 +24331,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-26",
@@ -24266,9 +24458,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-26",
@@ -24310,9 +24508,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-26",
@@ -25883,9 +26087,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-27",
@@ -25982,9 +26192,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-27",
@@ -28523,9 +28739,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-30",
@@ -28721,9 +28943,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-30",
@@ -28820,9 +29048,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-30",
@@ -30481,9 +30715,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-31",
@@ -30624,9 +30864,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-03-31",
@@ -32318,9 +32564,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-01",
@@ -33550,9 +33802,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-02",
@@ -33594,9 +33852,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-02",
@@ -33715,9 +33979,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-02",
@@ -33759,9 +34029,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-02",
@@ -35332,9 +35608,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-03",
@@ -35431,9 +35713,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-03",
@@ -37972,9 +38260,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-06",
@@ -38170,9 +38464,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-06",
@@ -38269,9 +38569,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-06",
@@ -39930,9 +40236,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-07",
@@ -40073,9 +40385,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-07",
@@ -41767,9 +42085,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-08",
@@ -42999,9 +43323,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-09",
@@ -43043,9 +43373,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-09",
@@ -43164,9 +43500,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-09",
@@ -43208,9 +43550,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-09",
@@ -44781,9 +45129,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-10",
@@ -44880,9 +45234,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-10",
@@ -47421,9 +47781,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-13",
@@ -47619,9 +47985,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-13",
@@ -47718,9 +48090,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-13",
@@ -49379,9 +49757,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-14",
@@ -49522,9 +49906,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-14",
@@ -51216,9 +51606,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-15",
@@ -52448,9 +52844,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-16",
@@ -52492,9 +52894,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-16",
@@ -52613,9 +53021,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-16",
@@ -52657,9 +53071,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-16",
@@ -54230,9 +54650,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-17",
@@ -54329,9 +54755,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-17",
@@ -56870,9 +57302,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-20",
@@ -57068,9 +57506,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-20",
@@ -57167,9 +57611,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-20",
@@ -58828,9 +59278,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-21",
@@ -58971,9 +59427,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-21",
@@ -60665,9 +61127,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-22",
@@ -61897,9 +62365,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-23",
@@ -61941,9 +62415,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-23",
@@ -62062,9 +62542,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-23",
@@ -62106,9 +62592,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-23",
@@ -63679,9 +64171,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-24",
@@ -63778,9 +64276,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-24",
@@ -66319,9 +66823,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-27",
@@ -68574,9 +69084,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-04-30",
@@ -72039,9 +72555,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-04",
@@ -75053,9 +75575,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-06",
@@ -75251,9 +75779,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-06",
@@ -75350,9 +75884,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-06",
@@ -76934,9 +77474,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-07",
@@ -76978,9 +77524,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-07",
@@ -77099,9 +77651,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-07",
@@ -77143,9 +77701,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-07",
@@ -78716,9 +79280,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-08",
@@ -78727,9 +79297,15 @@
       "period": "2",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-08",
@@ -78815,9 +79391,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-08",
@@ -81356,9 +81938,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-11",
@@ -81554,9 +82142,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-11",
@@ -81653,9 +82247,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-11",
@@ -83314,9 +83914,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-12",
@@ -83457,9 +84063,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-12",
@@ -85151,9 +85763,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-13",
@@ -86427,9 +87045,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-14",
@@ -86548,9 +87172,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-14",
@@ -86592,9 +87222,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-14",
@@ -90805,9 +91441,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-18",
@@ -91003,9 +91645,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-18",
@@ -91102,9 +91750,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-18",
@@ -92763,9 +93417,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-19",
@@ -92906,9 +93566,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-19",
@@ -94600,9 +95266,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-20",
@@ -95832,9 +96504,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-21",
@@ -95876,9 +96554,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-21",
@@ -95997,9 +96681,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-21",
@@ -96041,9 +96731,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-21",
@@ -97614,9 +98310,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-22",
@@ -97713,9 +98415,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-22",
@@ -102212,9 +102920,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-26",
@@ -102355,9 +103069,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-26",
@@ -104049,9 +104769,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-27",
@@ -105281,9 +106007,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-28",
@@ -105325,9 +106057,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-28",
@@ -105446,9 +106184,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-28",
@@ -105490,9 +106234,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-28",
@@ -107063,9 +107813,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-29",
@@ -107162,9 +107918,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-05-29",
@@ -109703,9 +110465,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-01",
@@ -109901,9 +110669,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-01",
@@ -110000,9 +110774,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-01",
@@ -111804,9 +112584,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-02",
@@ -114202,9 +114988,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-04",
@@ -114246,9 +115038,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-04",
@@ -114367,9 +115165,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-04",
@@ -114411,9 +115215,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-04",
@@ -115984,9 +116794,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-05",
@@ -116083,9 +116899,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-05",
@@ -118624,9 +119446,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-08",
@@ -118822,9 +119650,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-08",
@@ -118921,9 +119755,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-08",
@@ -120582,9 +121422,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-09",
@@ -120725,9 +121571,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-09",
@@ -122419,9 +123271,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-10",
@@ -123651,9 +124509,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-11",
@@ -123695,9 +124559,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-11",
@@ -123750,9 +124620,15 @@
       "period": "7",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-11",
@@ -123816,9 +124692,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-11",
@@ -123860,9 +124742,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-11",
@@ -125433,9 +126321,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-12",
@@ -125532,9 +126426,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-12",
@@ -128073,9 +128973,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-15",
@@ -128271,9 +129177,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-15",
@@ -128370,9 +129282,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-15",
@@ -130031,9 +130949,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-16",
@@ -130174,9 +131098,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-16",
@@ -131868,9 +132798,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-17",
@@ -133100,9 +134036,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-18",
@@ -133144,9 +134086,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-18",
@@ -133265,9 +134213,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-18",
@@ -133309,9 +134263,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-18",
@@ -134882,9 +135842,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-19",
@@ -134981,9 +135947,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-19",
@@ -137522,9 +138494,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-22",
@@ -137720,9 +138698,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-22",
@@ -137819,9 +138803,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-22",
@@ -139480,9 +140470,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-23",
@@ -139623,9 +140619,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-23",
@@ -141317,9 +142319,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-24",
@@ -142549,9 +143557,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-25",
@@ -142593,9 +143607,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-25",
@@ -142714,9 +143734,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-25",
@@ -142758,9 +143784,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-25",
@@ -144331,9 +145363,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-26",
@@ -144430,9 +145468,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-26",
@@ -146971,9 +148015,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-29",
@@ -147169,9 +148219,15 @@
       "period": "5",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-29",
@@ -147268,9 +148324,15 @@
       "period": "7",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-29",
@@ -148929,9 +149991,15 @@
       "period": "5",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-30",
@@ -149072,9 +150140,15 @@
       "period": "4",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-06-30",
@@ -150689,9 +151763,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-01",
@@ -151404,9 +152484,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-02",
@@ -151954,9 +153040,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-03",
@@ -153736,9 +154828,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-06",
@@ -155177,9 +156275,15 @@
       "period": "3",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-08",
@@ -156409,9 +157513,15 @@
       "period": "5",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-09",
@@ -156453,9 +157563,15 @@
       "period": "2",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-09",
@@ -156574,9 +157690,15 @@
       "period": "6",
       "subject": "정보",
       "room": "3",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "3",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-09",
@@ -156618,9 +157740,15 @@
       "period": "3",
       "subject": "정보",
       "room": "4",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "4",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-09",
@@ -158191,9 +159319,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-10",
@@ -158290,9 +159424,15 @@
       "period": "4",
       "subject": "정보",
       "room": "2",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "2",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-10",
@@ -169708,9 +170848,15 @@
       "period": "1",
       "subject": "정보",
       "room": "1",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "1",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-07-20",
@@ -170555,9 +171701,15 @@
       "period": "2",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-10",
@@ -170665,9 +171817,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-10",
@@ -170731,9 +171889,15 @@
       "period": "4",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-10",
@@ -170775,9 +171939,15 @@
       "period": "1",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-10",
@@ -172436,9 +173606,15 @@
       "period": "5",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-11",
@@ -172491,9 +173667,15 @@
       "period": "3",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-11",
@@ -174317,9 +175499,15 @@
       "period": "2",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-12",
@@ -175714,9 +176902,15 @@
       "period": "2",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-13",
@@ -175835,9 +177029,15 @@
       "period": "6",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-13",
@@ -177397,9 +178597,15 @@
       "period": "6",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-14",
@@ -177452,9 +178658,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-14",
@@ -177496,9 +178708,15 @@
       "period": "3",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-14",
@@ -181918,9 +183136,15 @@
       "period": "5",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-18",
@@ -181973,9 +183197,15 @@
       "period": "3",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-18",
@@ -183799,9 +185029,15 @@
       "period": "2",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-19",
@@ -185042,9 +186278,15 @@
       "period": "6",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-20",
@@ -185097,9 +186339,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-20",
@@ -185141,9 +186389,15 @@
       "period": "3",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-20",
@@ -186780,9 +188034,15 @@
       "period": "2",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-21",
@@ -186901,9 +188161,15 @@
       "period": "6",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-21",
@@ -189519,9 +190785,15 @@
       "period": "2",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-24",
@@ -189629,9 +190901,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-24",
@@ -189695,9 +190973,15 @@
       "period": "4",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-24",
@@ -189739,9 +191023,15 @@
       "period": "1",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-24",
@@ -191400,9 +192690,15 @@
       "period": "5",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-25",
@@ -191455,9 +192751,15 @@
       "period": "3",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-25",
@@ -193281,9 +194583,15 @@
       "period": "2",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-26",
@@ -194678,9 +195986,15 @@
       "period": "2",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-27",
@@ -194799,9 +196113,15 @@
       "period": "6",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-27",
@@ -196361,9 +197681,15 @@
       "period": "6",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-28",
@@ -196416,9 +197742,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-28",
@@ -196460,9 +197792,15 @@
       "period": "3",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-28",
@@ -199001,9 +200339,15 @@
       "period": "2",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-31",
@@ -199111,9 +200455,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-31",
@@ -199177,9 +200527,15 @@
       "period": "4",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-31",
@@ -199221,9 +200577,15 @@
       "period": "1",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-08-31",
@@ -200882,9 +202244,15 @@
       "period": "5",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-01",
@@ -200937,9 +202305,15 @@
       "period": "3",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-01",
@@ -202840,9 +204214,15 @@
       "period": "2",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-02",
@@ -202961,9 +204341,15 @@
       "period": "6",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-02",
@@ -204600,9 +205986,15 @@
       "period": "2",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-03",
@@ -205843,9 +207235,15 @@
       "period": "6",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-04",
@@ -205898,9 +207296,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-04",
@@ -205942,9 +207346,15 @@
       "period": "3",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-04",
@@ -208483,9 +209893,15 @@
       "period": "2",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-07",
@@ -208593,9 +210009,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-07",
@@ -208659,9 +210081,15 @@
       "period": "4",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-07",
@@ -208703,9 +210131,15 @@
       "period": "1",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-07",
@@ -210364,9 +211798,15 @@
       "period": "5",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-08",
@@ -210419,9 +211859,15 @@
       "period": "3",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-08",
@@ -212245,9 +213691,15 @@
       "period": "2",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-09",
@@ -213642,9 +215094,15 @@
       "period": "2",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-10",
@@ -213763,9 +215221,15 @@
       "period": "6",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-10",
@@ -215325,9 +216789,15 @@
       "period": "6",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-11",
@@ -215380,9 +216850,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-11",
@@ -215424,9 +216900,15 @@
       "period": "3",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-11",
@@ -217965,9 +219447,15 @@
       "period": "2",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-14",
@@ -218075,9 +219563,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-14",
@@ -218141,9 +219635,15 @@
       "period": "4",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-14",
@@ -218185,9 +219685,15 @@
       "period": "1",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-14",
@@ -219846,9 +221352,15 @@
       "period": "5",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-15",
@@ -219901,9 +221413,15 @@
       "period": "3",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-15",
@@ -221727,9 +223245,15 @@
       "period": "2",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-16",
@@ -223124,9 +224648,15 @@
       "period": "2",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-17",
@@ -223245,9 +224775,15 @@
       "period": "6",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-17",
@@ -224807,9 +226343,15 @@
       "period": "6",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-18",
@@ -224862,9 +226404,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-18",
@@ -224906,9 +226454,15 @@
       "period": "3",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-18",
@@ -227447,9 +229001,15 @@
       "period": "2",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-21",
@@ -227557,9 +229117,15 @@
       "period": "5",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-21",
@@ -227623,9 +229189,15 @@
       "period": "4",
       "subject": "정보",
       "room": "7",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "7",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-21",
@@ -227667,9 +229239,15 @@
       "period": "1",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-21",
@@ -229328,9 +230906,15 @@
       "period": "5",
       "subject": "정보",
       "room": "5",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "5",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-22",
@@ -229383,9 +230967,15 @@
       "period": "3",
       "subject": "정보",
       "room": "6",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "6",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-22",
@@ -231132,9 +232722,15 @@
       "period": "2",
       "subject": "정보",
       "room": "8",
-      "teacher": "",
+      "teacher": "김기현",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "teacher",
+        "previousSubject": "정보",
+        "previousRoom": "8",
+        "previousTeacher": ""
+      }
     },
     {
       "date": "2026-09-23",
@@ -236340,17 +237936,18 @@
       "department": "일반학과"
     }
   ],
-  "updatedAt": "2026-09-03 08:00 UTC",
-  "source": "NEIS 고등학교시간표",
+  "updatedAt": "2026-09-03 08:05 UTC",
+  "source": "NEIS 고등학교시간표 + 지정 교사 매핑",
   "schoolYear": 2026,
   "school": {
     "name": "군포중앙고등학교",
     "officeCode": "J10",
     "schoolCode": "7531272"
   },
+  "teacherSource": "사용자 지정 과목별 교사 매핑(컴시간 연동 전 임시 적용)",
   "dateRange": {
     "from": "2026-03-09",
     "to": "2026-09-26"
   },
-  "changeCount": 8
+  "changeCount": 274
 }
