@@ -5,7 +5,7 @@ import urllib.request
 from datetime import datetime, timezone
 
 KEY = os.environ.get('NEIS_API_KEY', '').strip()
-BASE = 'https://open.neis.go.kr/hub/schoolSchedule'
+BASE = 'https://open.neis.go.kr/hub/SchoolSchedule'
 OFFICE_CODE = 'J10'
 SCHOOL_CODE = '7531272'
 EXPECTED_SCHOOL_NAME = '군포중앙고등학교'
@@ -16,13 +16,20 @@ def school_year():
     return now.year if now.month >= 3 else now.year - 1
 
 
+def date_range():
+    year = school_year()
+    return f'{year}0301', f'{year + 1}0228'
+
+
 def fetch(page):
+    from_ymd, to_ymd = date_range()
     params = {
         'KEY': KEY,
         'Type': 'json',
         'ATPT_OFCDC_SC_CODE': OFFICE_CODE,
         'SD_SCHUL_CODE': SCHOOL_CODE,
-        'AY': str(school_year()),
+        'AA_FROM_YMD': from_ymd,
+        'AA_TO_YMD': to_ymd,
         'pIndex': str(page),
         'pSize': '1000',
     }
@@ -32,24 +39,38 @@ def fetch(page):
 
 
 def rows_from(payload):
-    block = payload.get('schoolSchedule', [])
-    if not isinstance(block, list) or len(block) < 2:
+    block = payload.get('SchoolSchedule')
+    if not isinstance(block, list):
         return []
-    return block[1].get('row', []) or []
+    for item in block:
+        if isinstance(item, dict) and isinstance(item.get('row'), list):
+            return item['row'] or []
+    return []
 
 
 def check_error(payload, page):
-    block = payload.get('schoolSchedule', [])
-    if not isinstance(block, list) or not block:
-        return
-    head = block[0].get('head', []) if isinstance(block[0], dict) else []
-    for item in head if isinstance(head, list) else []:
-        info = item.get('RESULT') if isinstance(item, dict) else None
-        if isinstance(info, dict):
-            code = str(info.get('CODE', '')).strip()
-            message = str(info.get('MESSAGE', '')).strip()
-            if code and code != 'INFO-000':
-                raise RuntimeError(f'NEIS API error (page={page}): {code} {message}')
+    block = payload.get('SchoolSchedule')
+    if not isinstance(block, list):
+        raise RuntimeError(f'Unexpected NEIS response structure (page={page}): missing SchoolSchedule')
+    for section in block:
+        if not isinstance(section, dict):
+            continue
+        head = section.get('head', [])
+        if not isinstance(head, list):
+            continue
+        for item in head:
+            if not isinstance(item, dict):
+                continue
+            info = item.get('RESULT')
+            if isinstance(info, dict):
+                code = str(info.get('CODE', '')).strip()
+                message = str(info.get('MESSAGE', '')).strip()
+                if code and code != 'INFO-000':
+                    # INFO-200 means the requested query has no rows. Keep the
+                    # old schedule file instead of treating it as valid data.
+                    if code == 'INFO-200':
+                        return
+                    raise RuntimeError(f'NEIS API error (page={page}): {code} {message}')
 
 
 def normalize_date(value):
@@ -65,13 +86,20 @@ def main():
     if not KEY:
         raise SystemExit('NEIS_API_KEY secret is required')
 
+    from_ymd, to_ymd = date_range()
+    print(f'Fetching NEIS academic schedule: {from_ymd} -> {to_ymd}')
+
     rows = []
     for page in range(1, 101):
         payload = fetch(page)
         check_error(payload, page)
         batch = rows_from(payload)
         if batch:
-            school_names = {str(r.get('SCHUL_NM', '')).strip() for r in batch if str(r.get('SCHUL_NM', '')).strip()}
+            school_names = {
+                str(r.get('SCHUL_NM', '')).strip()
+                for r in batch
+                if str(r.get('SCHUL_NM', '')).strip()
+            }
             if school_names and school_names != {EXPECTED_SCHOOL_NAME}:
                 raise RuntimeError(f'Unexpected school name: {sorted(school_names)}')
             rows.extend(batch)
@@ -102,7 +130,10 @@ def main():
 
     normalized.sort(key=lambda x: (x['date'], x['event']))
     if not normalized:
-        raise SystemExit('NEIS returned no usable academic schedule rows; refusing to overwrite data/schedule.json')
+        raise SystemExit(
+            f'NEIS returned no usable academic schedule rows for {from_ymd}-{to_ymd}; '
+            'refusing to overwrite data/schedule.json'
+        )
 
     dates = sorted({r['date'] for r in normalized})
     out = {
