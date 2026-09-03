@@ -1,8 +1,10 @@
 package kr.co.gpja.timetable.widget
 
+import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.widget.RemoteViews
 import java.time.LocalTime
@@ -29,45 +31,60 @@ class TimetableWidget : AppWidgetProvider() {
                 val style = prefs.getString("style_$appWidgetId", "light") ?: "light"
                 val views = RemoteViews(context.packageName, R.layout.widget_layout)
                 applyStyle(views, style)
+
                 views.setTextViewText(R.id.widget_school, "군포중앙고 · 1학년 5반")
                 when {
                     current != null -> {
                         views.setTextViewText(R.id.widget_title, "${current}교시 진행 중")
                         views.setTextViewText(R.id.widget_time, "${format(startTime(current))}–${format(endTime(current))}")
-                        views.setTextViewText(R.id.widget_subject, "시간표를 열어 과목을 확인하세요.")
+                        views.setTextViewText(R.id.widget_subject, WidgetData.summary(context).removePrefix("${current}교시  "))
+                        views.setTextViewText(R.id.widget_hint, "탭해서 시간표 열기")
                     }
                     next != null -> {
                         views.setTextViewText(R.id.widget_title, "다음 ${next}교시")
                         views.setTextViewText(R.id.widget_time, "${format(startTime(next))}–${format(endTime(next))}")
-                        views.setTextViewText(R.id.widget_subject, "시간표를 열어 과목을 확인하세요.")
+                        views.setTextViewText(R.id.widget_subject, WidgetData.summary(context).removePrefix("다음 ${next}교시  "))
+                        views.setTextViewText(R.id.widget_hint, "수업 전에 확인하세요")
                     }
                     else -> {
                         views.setTextViewText(R.id.widget_title, "오늘 수업 종료")
                         views.setTextViewText(R.id.widget_time, "")
                         views.setTextViewText(R.id.widget_subject, "오늘 수업이 모두 끝났습니다.")
+                        views.setTextViewText(R.id.widget_hint, "탭해서 내일 시간표 확인")
                     }
                 }
+
+                val openIntent = Intent(context, MainActivity::class.java)
+                val pendingIntent = PendingIntent.getActivity(
+                    context,
+                    appWidgetId,
+                    openIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                views.setOnClickPendingIntent(R.id.widget_root, pendingIntent)
                 manager.updateAppWidget(appWidgetId, views)
             }
         }
 
         private fun applyStyle(views: RemoteViews, style: String) {
-            val (background, primary, secondary, titleSize, padding) = when (style) {
-                "dark" -> Style(Color.rgb(25, 25, 28), Color.WHITE, Color.LTGRAY, 20f, 16)
-                "color" -> Style(Color.rgb(225, 240, 255), Color.rgb(15, 55, 95), Color.rgb(55, 95, 130), 20f, 16)
-                "minimal" -> Style(Color.rgb(245, 245, 245), Color.rgb(30, 30, 30), Color.rgb(100, 100, 100), 18f, 12)
-                else -> Style(Color.WHITE, Color.rgb(17, 17, 17), Color.rgb(100, 100, 100), 20f, 16)
+            val (background, primary, secondary, accent, titleSize, padding) = when (style) {
+                "dark" -> Style(R.drawable.widget_bg_dark, Color.WHITE, Color.rgb(174, 177, 188), Color.rgb(147, 197, 253), 22f, 16)
+                "color" -> Style(R.drawable.widget_bg_color, Color.rgb(15, 55, 95), Color.rgb(55, 95, 130), Color.rgb(37, 99, 235), 22f, 16)
+                "minimal" -> Style(R.drawable.widget_bg_minimal, Color.rgb(30, 30, 30), Color.rgb(100, 100, 100), Color.rgb(71, 85, 105), 20f, 13)
+                else -> Style(R.drawable.widget_bg_light, Color.rgb(15, 23, 42), Color.rgb(100, 116, 139), Color.rgb(37, 99, 235), 22f, 16)
             }
-            views.setInt(R.id.widget_root, "setBackgroundColor", background)
+            views.setInt(R.id.widget_root, "setBackgroundResource", background)
             views.setTextColor(R.id.widget_school, secondary)
             views.setTextColor(R.id.widget_title, primary)
             views.setTextColor(R.id.widget_time, secondary)
             views.setTextColor(R.id.widget_subject, primary)
+            views.setTextColor(R.id.widget_badge, accent)
+            views.setTextColor(R.id.widget_hint, secondary)
             views.setTextViewTextSize(R.id.widget_title, android.util.TypedValue.COMPLEX_UNIT_SP, titleSize)
             views.setViewPadding(R.id.widget_root, padding, padding, padding, padding)
         }
 
-        private data class Style(val background: Int, val primary: Int, val secondary: Int, val titleSize: Float, val padding: Int)
+        private data class Style(val background: Int, val primary: Int, val secondary: Int, val accent: Int, val titleSize: Float, val padding: Int)
 
         private fun currentPeriod(t: LocalTime): Int? = (1..7).firstOrNull { within(it, t) }
         private fun nextPeriod(t: LocalTime): Int? = (1..7).firstOrNull { t.isBefore(startTime(it)) }
