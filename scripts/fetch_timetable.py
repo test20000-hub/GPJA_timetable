@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -106,13 +107,25 @@ def normalize_date(value):
     return ''
 
 
+def normalize_subject(subject):
+    """Collapse school subject labels such as '국어 공통1', '영어 공통2', '과학 통합1'."""
+    value = re.sub(r'\s+', '', str(subject or '').strip())
+    # Keep the more specific 과학탐구실험 label intact before generic 과학 handling.
+    if value.startswith('과학탐구실험'):
+        return '과학탐구실험'
+    value = re.sub(r'공통[12]?$', '', value)
+    value = re.sub(r'통합[12]?$', '', value)
+    value = re.sub(r'[12]$', '', value)
+    return value
+
+
 def teacher_name(row, subject):
     # Prefer an actual teacher field if a future timetable feed supplies one.
     for key in ('TCHR_NM', 'TEACHER_NM', 'TEACH_NM', 'TEACHER', 'TCHR'):
         value = str(row.get(key, '') or '').strip()
         if value:
             return value
-    return TEACHER_BY_SUBJECT.get(subject, '')
+    return TEACHER_BY_SUBJECT.get(normalize_subject(subject), '')
 
 
 def load_previous(path):
