@@ -18,6 +18,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -35,7 +36,7 @@ class MainActivity : Activity() {
         private const val SITE_URL = "https://test20000-hub.github.io/GPJA_timetable/"
         private const val NOTIFICATION_REQUEST_CODE = 1001
         private const val CAMERA_REQUEST_CODE = 1002
-        private const val ADMIN_AUTH_VERSION = 1
+        private const val ADMIN_AUTH_VERSION = 2
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,29 +88,45 @@ class MainActivity : Activity() {
     }
 
     private fun ensureRoleAndLoad() {
-        val existing = prefs.getString("role", null)
-        if (existing == "admin" && prefs.getInt("admin_auth_version", 0) != ADMIN_AUTH_VERSION) {
-            prefs.edit().remove("role").remove("approved").putInt("admin_auth_version", 0).apply()
-        }
-        val role = prefs.getString("role", null)
-        if (role != null) {
-            loadSite()
+        migrateLegacyAdminRole()
+        if (!prefs.getBoolean("setup_complete", false)) {
+            showRoleDialog()
             return
         }
-        showRoleDialog()
+        loadSite()
+    }
+
+    private fun migrateLegacyAdminRole() {
+        if (prefs.getString("role", null) == "admin") {
+            prefs.edit()
+                .remove("role")
+                .putBoolean("admin_enabled", true)
+                .putInt("admin_auth_version", ADMIN_AUTH_VERSION)
+                .putBoolean("setup_complete", true)
+                .apply()
+        }
+        if (prefs.getBoolean("admin_enabled", false) && prefs.getInt("admin_auth_version", 0) != ADMIN_AUTH_VERSION) {
+            prefs.edit()
+                .putBoolean("admin_enabled", false)
+                .putInt("admin_auth_version", 0)
+                .apply()
+        }
     }
 
     private fun showRoleDialog() {
         android.app.AlertDialog.Builder(this)
-            .setTitle("앱 역할 선택")
-            .setMessage("일반 앱은 바로 사용할 수 있습니다. 관리자 앱은 등록코드가 필요합니다.")
-            .setPositiveButton("관리자 앱") { _, _ -> showAdminCodeDialog() }
-            .setNegativeButton("일반 앱") { _, _ -> prefs.edit().putString("role", "user").apply(); loadSite() }
+            .setTitle("앱 사용 설정")
+            .setMessage("일반 시간표 앱은 누구나 사용할 수 있습니다. 관리자 기능을 활성화하면 일반 앱을 그대로 사용하면서 QR 승인 관리 기능도 함께 사용할 수 있습니다.")
+            .setPositiveButton("관리자 기능도 사용") { _, _ -> showAdminCodeDialog(firstSetup = true) }
+            .setNegativeButton("일반 앱으로 사용") { _, _ ->
+                prefs.edit().putBoolean("setup_complete", true).putBoolean("admin_enabled", false).apply()
+                loadSite()
+            }
             .setCancelable(false)
             .show()
     }
 
-    private fun showAdminCodeDialog() {
+    private fun showAdminCodeDialog(firstSetup: Boolean = false) {
         val input = EditText(this).apply {
             hint = "관리자 등록코드"
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
@@ -121,19 +138,29 @@ class MainActivity : Activity() {
             addView(input, LinearLayout.LayoutParams(-1, 56))
         }
         val dialog = android.app.AlertDialog.Builder(this)
-            .setTitle("관리자 등록코드")
-            .setMessage("관리자 등록코드를 입력해야 관리자 앱으로 등록됩니다.")
+            .setTitle("관리자 기능 활성화")
+            .setMessage("관리자 등록코드를 입력하면 일반 시간표 앱은 그대로 유지되고 관리자 QR 승인 기능이 추가됩니다.")
             .setView(container)
-            .setPositiveButton("등록", null)
-            .setNegativeButton("일반 앱으로 사용") { _, _ -> prefs.edit().putString("role", "user").apply(); loadSite() }
+            .setPositiveButton("활성화", null)
+            .setNegativeButton(if (firstSetup) "일반 앱으로 사용" else "취소") { _, _ ->
+                if (firstSetup) {
+                    prefs.edit().putBoolean("setup_complete", true).putBoolean("admin_enabled", false).apply()
+                    loadSite()
+                }
+            }
             .setCancelable(false)
             .create()
         dialog.setOnShowListener {
             dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                 val code = input.text.toString()
                 if (BuildConfig.ADMIN_CODE.isNotEmpty() && code == BuildConfig.ADMIN_CODE) {
-                    prefs.edit().putString("role", "admin").putInt("admin_auth_version", ADMIN_AUTH_VERSION).apply()
+                    prefs.edit()
+                        .putBoolean("setup_complete", true)
+                        .putBoolean("admin_enabled", true)
+                        .putInt("admin_auth_version", ADMIN_AUTH_VERSION)
+                        .apply()
                     dialog.dismiss()
+                    Toast.makeText(this, "관리자 기능이 활성화되었습니다.", Toast.LENGTH_SHORT).show()
                     loadSite()
                 } else {
                     input.text.clear()
@@ -167,7 +194,7 @@ class MainActivity : Activity() {
     }
 
     private inner class GpjaBridge(private val activity: MainActivity) {
-        @JavascriptInterface fun isAdmin(): Boolean = prefs.getString("role", "user") == "admin"
+        @JavascriptInterface fun isAdmin(): Boolean = prefs.getBoolean("admin_enabled", false) && prefs.getInt("admin_auth_version", 0) == ADMIN_AUTH_VERSION
         @JavascriptInterface fun isApproved(): Boolean = isAdmin() || prefs.getBoolean("approved", false)
         @JavascriptInterface fun setApproved(value: Boolean) { prefs.edit().putBoolean("approved", value).apply() }
         @JavascriptInterface fun getInstallationId(): String {
@@ -178,6 +205,7 @@ class MainActivity : Activity() {
             return id
         }
         @JavascriptInterface fun requestCameraPermission() { activity.runOnUiThread { activity.requestCameraPermission() } }
+        @JavascriptInterface fun registerAdmin() { activity.runOnUiThread { activity.showAdminCodeDialog(false) } }
     }
 
     private fun showErrorPage() {
