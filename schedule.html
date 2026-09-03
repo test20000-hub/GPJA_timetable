@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="군포중앙고등학교 학사일정" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css?v=6" />
+  <title>군포중앙고 학사일정</title>
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="brand-mark" aria-hidden="true">G</div>
+        <div>
+          <p class="eyebrow">GPJA · SCHOOL CALENDAR</p>
+          <h1>군포중앙고등학교</h1>
+          <p class="hero-subtitle">시험, 방학, 행사 등 학교의 주요 일정을 확인하세요.</p>
+        </div>
+      </div>
+      <button id="installBtn" class="icon-btn" hidden aria-label="앱 설치" title="앱 설치">＋</button>
+    </header>
+
+    <nav class="app-tabs" aria-label="서비스 메뉴">
+      <a class="app-tab" href="index.html">시간표</a>
+      <a class="app-tab active" href="schedule.html" aria-current="page">학사일정</a>
+    </nav>
+
+    <section class="schedule-toolbar card">
+      <button id="prevMonth" class="nav-btn" aria-label="이전 달">‹</button>
+      <div class="date-heading">
+        <span class="week-kicker">ACADEMIC CALENDAR</span>
+        <strong id="monthLabel">학사일정</strong>
+        <span id="updatedLabel">불러오는 중…</span>
+      </div>
+      <button id="nextMonth" class="nav-btn" aria-label="다음 달">›</button>
+    </section>
+
+    <section class="schedule-actions">
+      <button id="todayBtn" class="today-btn">● 오늘로 이동</button>
+    </section>
+
+    <section id="notice" class="notice" hidden></section>
+    <section id="schedule" class="schedule-list" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>NEIS 학사일정 · 군포중앙고등학교<br><small>© 2026 GPJA Timetable. All rights reserved.</small></div>
+      <span class="version">v1.0.0</span>
+    </div>
+  </footer>
+  <script src="schedule.js?v=1" defer></script>
+</body>
+</html>
