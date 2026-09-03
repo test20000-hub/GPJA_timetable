@@ -24,6 +24,8 @@
   }
   .app-tab{min-height:54px;padding:7px 5px;flex-direction:column;gap:3px;border-radius:15px;font-size:9px}
   .app-tab span{font-size:18px;line-height:1}
+  /* v1.6.2: keep the QR approval shortcut above the fixed bottom navigation */
+  .gpja-approval-fab{bottom:calc(82px + env(safe-area-inset-bottom));right:16px;z-index:999}
 }
 /* keep the primary page from being hidden behind the mobile navigation */
 @media (max-width:700px){footer{padding-bottom:8px}}
