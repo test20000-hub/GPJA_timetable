@@ -6,40 +6,26 @@ plugins {
 android {
     namespace = "kr.co.gpja.timetable.widget"
     compileSdk = 35
-
-    buildFeatures {
-        buildConfig = true
-    }
-
+    buildFeatures { buildConfig = true }
     defaultConfig {
         applicationId = "kr.co.gpja.timetable.widget"
         minSdk = 26
         targetSdk = 35
-        versionCode = 6
-        versionName = "1.3.2"
+        versionCode = 7
+        versionName = "1.3.3"
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(17))
-        }
-    }
+    kotlinOptions { jvmTarget = "17" }
+    java { toolchain { languageVersion.set(JavaLanguageVersion.of(17)) } }
 }
 
 tasks.withType<JavaCompile>().configureEach {
     sourceCompatibility = "17"
     targetCompatibility = "17"
 }
-
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile>().configureEach {
     compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
 }
