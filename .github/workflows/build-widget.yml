@@ -45,17 +45,17 @@ jobs:
       - name: Verify APK
         run: test -s app/build/outputs/apk/debug/app-debug.apk
       - name: Prepare release APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/GPJA-Timetable-v1.6.1.apk
+        run: cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/GPJA-Timetable-v1.6.2.apk
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gpja-timetable-v1.6.1
-          path: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.6.1.apk
+          name: gpja-timetable-v1.6.2
+          path: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.6.2.apk
           if-no-files-found: error
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.6.1
-          name: GPJA Timetable v1.6.1
+          tag_name: v1.6.2
+          name: GPJA Timetable v1.6.2
           generate_release_notes: true
-          files: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.6.1.apk
+          files: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.6.2.apk
