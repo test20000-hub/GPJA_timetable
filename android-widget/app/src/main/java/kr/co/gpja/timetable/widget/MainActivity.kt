@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
+import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -30,7 +31,10 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        WindowCompat.setDecorFitsSystemWindows(window, true)
+        // Android 15 enforces edge-to-edge for targetSdk 35. Handle system-bar
+        // insets explicitly so the WebView content starts below the status bar
+        // and ends above the navigation bar instead of being drawn underneath.
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         WindowInsetsControllerCompat(window, window.decorView).show(WindowInsetsCompat.Type.statusBars())
 
         webView = WebView(this).apply {
@@ -43,6 +47,18 @@ class MainActivity : Activity() {
             settings.loadsImagesAutomatically = true
             settings.useWideViewPort = true
             settings.loadWithOverviewMode = true
+
+            ViewCompat.setOnApplyWindowInsetsListener(this) { view, insets ->
+                val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                view.setPadding(
+                    view.paddingLeft,
+                    bars.top,
+                    view.paddingRight,
+                    bars.bottom
+                )
+                insets
+            }
+
             webViewClient = object : WebViewClient() {
                 override fun onReceivedError(
                     view: WebView?,
@@ -56,6 +72,7 @@ class MainActivity : Activity() {
         }
 
         setContentView(webView)
+        ViewCompat.requestApplyInsets(webView)
         webView.loadUrl(SITE_URL)
         UpdateChecker.check(this, BuildConfig.VERSION_NAME)
 
