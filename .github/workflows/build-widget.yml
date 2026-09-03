@@ -2,6 +2,10 @@ name: Build Android Widget
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'android-widget/**'
+      - '.github/workflows/build-widget.yml'
 
 permissions:
   contents: read
