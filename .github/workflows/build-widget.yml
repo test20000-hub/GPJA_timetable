@@ -19,51 +19,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up JDK 17
         uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
-
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.10.2'
-
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
-
-      # Keep the Android debug signing key between builds so future APKs can
-      # update an already-installed GPJA APK instead of being treated as a new app.
       - name: Restore stable debug signing key
         uses: actions/cache@v4
         with:
           path: ~/.android/debug.keystore
           key: gpja-android-debug-signing-key-v1
-
       - name: Build APK
         run: gradle --no-daemon :app:assembleDebug
-
       - name: Verify APK
         run: test -s app/build/outputs/apk/debug/app-debug.apk
-
       - name: Prepare release APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/GPJA-Timetable-v1.3.2.apk
-
+        run: cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/GPJA-Timetable-v1.3.3.apk
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gpja-timetable-v1.3.2
-          path: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.3.2.apk
+          name: gpja-timetable-v1.3.3
+          path: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.3.3.apk
           if-no-files-found: error
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.3.2
-          name: GPJA Timetable v1.3.2
+          tag_name: v1.3.3
+          name: GPJA Timetable v1.3.3
           generate_release_notes: true
-          files: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.3.2.apk
+          files: android-widget/app/build/outputs/apk/debug/GPJA-Timetable-v1.3.3.apk
