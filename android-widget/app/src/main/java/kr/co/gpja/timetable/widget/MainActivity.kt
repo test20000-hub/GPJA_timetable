@@ -57,6 +57,7 @@ class MainActivity : Activity() {
 
         setContentView(webView)
         webView.loadUrl(SITE_URL)
+        UpdateChecker.check(this, BuildConfig.VERSION_NAME)
 
         if (Build.VERSION.SDK_INT >= 33 &&
             checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
