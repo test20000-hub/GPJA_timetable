@@ -11,18 +11,10 @@ OFFICE_CODE = 'J10'
 SCHOOL_CODE = '7531272'
 EXPECTED_SCHOOL_NAME = '군포중앙고등학교'
 
-# Temporary teacher mapping until a reliable school timetable teacher feed is connected.
 TEACHER_BY_SUBJECT = {
-    '국어': '김미경',
-    '정보': '김기현',
-    '영어': '여국화',
-    '수학': '송희영',
-    '과학': '편문희',
-    '진로': '김희정',
-    '체육': '채승희',
-    '사회': '김수진',
-    '한국사': '서지연',
-    '과학탐구실험': '손지영',
+    '국어': '김미경', '정보': '김기현', '영어': '여국화', '수학': '송희영',
+    '과학': '편문희', '진로': '김희정', '체육': '채승희', '사회': '김수진',
+    '한국사': '서지연', '과학탐구실험': '손지영',
 }
 
 
@@ -30,14 +22,9 @@ def school_year():
     now = datetime.now()
     return now.year if now.month >= 3 else now.year - 1
 
-
 BASE_PARAMS = {
-    'KEY': KEY,
-    'Type': 'json',
-    'ATPT_OFCDC_SC_CODE': OFFICE_CODE,
-    'SD_SCHUL_CODE': SCHOOL_CODE,
-    'AY': str(school_year()),
-    'pSize': '1000',
+    'KEY': KEY, 'Type': 'json', 'ATPT_OFCDC_SC_CODE': OFFICE_CODE,
+    'SD_SCHUL_CODE': SCHOOL_CODE, 'AY': str(school_year()), 'pSize': '1000',
 }
 
 
@@ -59,17 +46,16 @@ def check_neis_error(payload, semester, page):
     block = payload.get('hisTimetable', [])
     if not isinstance(block, list) or not block:
         return
-    first = block[0] if isinstance(block[0], dict) else {}
-    result = first.get('head', [])
+    result = block[0].get('head', []) if isinstance(block[0], dict) else []
     if not isinstance(result, list):
         return
     for item in result:
         if not isinstance(item, dict):
             continue
-        result_info = item.get('RESULT')
-        if isinstance(result_info, dict):
-            code = str(result_info.get('CODE', '')).strip()
-            message = str(result_info.get('MESSAGE', '')).strip()
+        info = item.get('RESULT')
+        if isinstance(info, dict):
+            code = str(info.get('CODE', '')).strip()
+            message = str(info.get('MESSAGE', '')).strip()
             if code and code != 'INFO-000':
                 raise RuntimeError(f'NEIS API error (semester={semester}, page={page}): {code} {message}')
 
@@ -88,7 +74,6 @@ def validate_school(rows, semester, page):
         raise RuntimeError(f'Unexpected NEIS school code (semester={semester}, page={page}): {sorted(school_codes)}; expected {SCHOOL_CODE}')
     if not school_names:
         raise RuntimeError(f'NEIS timetable response has no SCHUL_NM (semester={semester}, page={page})')
-    print(f'Validated NEIS school: {EXPECTED_SCHOOL_NAME} ({OFFICE_CODE}/{SCHOOL_CODE})')
 
 
 def fetch_semester(semester):
@@ -115,24 +100,17 @@ def normalize_date(value):
 
 
 def normalize_subject(subject):
-    """Normalize subject variants such as 공통국어2, 공통영어1, 통합과학2, 국어2."""
     value = re.sub(r'\s+', '', str(subject or '').strip())
     if not value:
         return ''
-
-    # Specific subject must be checked before generic 과학.
     if value.startswith('과학탐구실험'):
         return '과학탐구실험'
-
-    # NEIS may put 공통/통합 in front of the base subject.
     value = re.sub(r'^(공통|통합)', '', value)
-    # It may also append 1/2 (or repeated 1/2 markers).
     value = re.sub(r'[12]+$', '', value)
     return value
 
 
 def teacher_name(row, subject):
-    # Prefer an actual teacher field if a future timetable feed supplies one.
     for key in ('TCHR_NM', 'TEACHER_NM', 'TEACH_NM', 'TEACHER', 'TCHR'):
         value = str(row.get(key, '') or '').strip()
         if value:
@@ -145,40 +123,63 @@ def load_previous(path):
         with open(path, 'r', encoding='utf-8') as f:
             previous = json.load(f)
         rows = previous.get('rows', [])
-        if isinstance(rows, list):
-            return rows
+        return rows if isinstance(rows, list) else []
     except (FileNotFoundError, json.JSONDecodeError, OSError):
-        pass
-    return []
+        return []
+
+
+def timetable_key(row):
+    return (str(row.get('date', '')), str(row.get('grade', '')), str(row.get('className', '')), str(row.get('period', '')))
+
+
+def build_baseline(previous_rows, normalized):
+    """Keep a stable normal timetable while allowing this week's temporary swaps.
+
+    The previous generated data is treated as a baseline only when it is not itself
+    marked as a temporary change. Once a slot has a change record, its previousSubject
+    is the stable baseline. This prevents Monday/Wednesday/Thursday swaps from being
+    forgotten on the next scheduled fetch.
+    """
+    baseline = {}
+    for row in previous_rows:
+        key = timetable_key(row)
+        change = row.get('change') or {}
+        if change.get('previousSubject'):
+            baseline[key] = {
+                'subject': str(change.get('previousSubject') or '').strip(),
+                'room': str(change.get('previousRoom') or '').strip(),
+                'teacher': str(change.get('previousTeacher') or '').strip(),
+            }
+        else:
+            baseline[key] = {
+                'subject': str(row.get('subject') or '').strip(),
+                'room': str(row.get('room') or '').strip(),
+                'teacher': str(row.get('teacher') or '').strip(),
+            }
+
+    # A slot absent from the old snapshot has no safe baseline, so don't invent one.
+    return baseline
 
 
 def add_change_metadata(normalized, previous_rows):
-    previous = {}
-    for row in previous_rows:
-        key = (str(row.get('date', '')), str(row.get('grade', '')), str(row.get('className', '')), str(row.get('period', '')))
-        previous[key] = row
-
+    baseline = build_baseline(previous_rows, normalized)
     changed = 0
     for row in normalized:
-        key = (row['date'], row['grade'], row['className'], row['period'])
-        old = previous.get(key)
+        key = timetable_key(row)
+        old = baseline.get(key)
         if old is None:
-            # Do not mark future/newly fetched dates as "교체". A replacement can only
-            # be established when the same date/class/period existed in the old snapshot.
             continue
 
-        old_subject = str(old.get('subject', '') or '').strip()
-        old_room = str(old.get('room', '') or '').strip()
-        old_teacher = str(old.get('teacher', '') or '').strip()
+        old_subject = old['subject']
+        old_room = old['room']
+        old_teacher = old['teacher']
         new_subject = row['subject']
         new_room = row['room']
         new_teacher = row['teacher']
 
         subject_changed = old_subject != new_subject
         room_changed = old_room != new_room
-        # A blank -> mapped teacher transition is initialization, not a timetable replacement.
         teacher_changed = bool(old_teacher and new_teacher and old_teacher != new_teacher)
-
         if not (subject_changed or room_changed or teacher_changed):
             continue
 
@@ -220,16 +221,10 @@ def main():
         subject = str(r.get('ITRT_CNTNT', '') or '').strip()
         if not date or not grade or not cls or not period:
             continue
-
         item = {
-            'date': date,
-            'grade': grade,
-            'className': cls,
-            'period': period,
-            'subject': subject,
-            'room': str(r.get('CLRM_NM', '') or '').strip(),
-            'teacher': teacher_name(r, subject),
-            'course': str(r.get('ORD_SC_NM', '') or '').strip(),
+            'date': date, 'grade': grade, 'className': cls, 'period': period,
+            'subject': subject, 'room': str(r.get('CLRM_NM', '') or '').strip(),
+            'teacher': teacher_name(r, subject), 'course': str(r.get('ORD_SC_NM', '') or '').strip(),
             'department': str(r.get('DDDEP_NM', '') or '').strip(),
         }
         key = tuple(item.items())
