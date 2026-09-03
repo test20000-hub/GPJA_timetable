@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/widget_school"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="군포중앙고 · 1학년 5반"
+        android:textColor="#444444"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/widget_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="시간표"
+        android:textColor="#111111"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/widget_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="09:10–10:00"
+        android:textColor="#777777"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/widget_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="시간표를 열어 과목을 확인하세요."
+        android:textColor="#333333"
+        android:textSize="14sp" />
+</LinearLayout>
