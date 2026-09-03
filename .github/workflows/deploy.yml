@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths-ignore:
       - 'data/timetable.json'
+      - 'data/schedule.json'
 
 permissions:
   contents: write
@@ -39,20 +40,24 @@ jobs:
           NEIS_API_KEY: ${{ secrets.NEIS_API_KEY }}
         run: python scripts/fetch_timetable.py
 
+      - name: Fetch NEIS academic schedule
+        env:
+          NEIS_API_KEY: ${{ secrets.NEIS_API_KEY }}
+        run: python scripts/fetch_schedule.py
+
       - name: Validate generated data
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
-          p = Path('data/timetable.json')
-          if not p.exists():
-              raise SystemExit('data/timetable.json was not generated')
+          timetable = json.loads(Path('data/timetable.json').read_text(encoding='utf-8'))
+          schedule = json.loads(Path('data/schedule.json').read_text(encoding='utf-8'))
 
-          data = json.loads(p.read_text(encoding='utf-8'))
-          rows = data.get('rows', [])
-          school = data.get('school', {})
+          rows = timetable.get('rows', [])
+          school = timetable.get('school', {})
           print(f"Generated timetable rows: {len(rows)}")
+          print(f"Generated academic schedule rows: {len(schedule.get('rows', []))}")
           print(f"School: {school}")
 
           if school.get('name') != '군포중앙고등학교':
@@ -63,45 +68,52 @@ jobs:
               raise SystemExit(f"Unexpected school code: {school.get('schoolCode')!r}")
           if not rows:
               raise SystemExit('NEIS returned no timetable rows')
+          if schedule.get('school', {}).get('name') != '군포중앙고등학교':
+              raise SystemExit('Academic schedule school validation failed')
+          if not schedule.get('rows'):
+              raise SystemExit('NEIS returned no academic schedule rows')
 
           dates = sorted({r.get('date', '') for r in rows if r.get('date')})
           if not dates:
               raise SystemExit('Generated timetable contains no valid dates')
-          print(f"Date range: {dates[0]} -> {dates[-1]}")
+          print(f"Timetable date range: {dates[0]} -> {dates[-1]}")
 
           bad_dates = [r.get('date') for r in rows if len(str(r.get('date', ''))) != 10 or '-' not in str(r.get('date', ''))]
           if bad_dates:
-              raise SystemExit(f'Invalid date format found: {bad_dates[:3]}')
+              raise SystemExit(f'Invalid timetable date format found: {bad_dates[:3]}')
 
           target = [r for r in rows if str(r.get('grade')) == '1' and str(r.get('className')) == '5']
           if not target:
               raise SystemExit('No rows found for default class 1학년 5반')
           print(f"1학년 5반 rows: {len(target)}")
-          print('Sample:', target[0])
+          print('Timetable sample:', target[0])
+          print('Schedule sample:', schedule['rows'][0])
           PY
 
-      - name: Persist timetable data
+      - name: Persist generated data
         run: |
           set -e
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cp data/timetable.json /tmp/timetable.json
+          cp data/schedule.json /tmp/schedule.json
 
           for attempt in 1 2 3; do
             echo "Persist attempt ${attempt}"
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/timetable.json data/timetable.json
-            git add data/timetable.json
+            cp /tmp/schedule.json data/schedule.json
+            git add data/timetable.json data/schedule.json
 
             if git diff --cached --quiet; then
-              echo 'No timetable data changes.'
+              echo 'No generated data changes.'
               exit 0
             fi
 
-            git commit -m 'chore: update timetable data'
+            git commit -m 'chore: update timetable and academic schedule data'
             if git push origin HEAD:main; then
-              echo 'Timetable data pushed successfully.'
+              echo 'Generated data pushed successfully.'
               exit 0
             fi
 
@@ -109,7 +121,7 @@ jobs:
             git reset --hard origin/main
           done
 
-          echo 'Failed to persist timetable data after 3 attempts.'
+          echo 'Failed to persist generated data after 3 attempts.'
           exit 1
 
       - name: Setup Pages
