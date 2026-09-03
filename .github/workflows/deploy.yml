@@ -53,7 +53,6 @@ jobs:
 
           timetable = json.loads(Path('data/timetable.json').read_text(encoding='utf-8'))
           schedule = json.loads(Path('data/schedule.json').read_text(encoding='utf-8'))
-
           rows = timetable.get('rows', [])
           school = timetable.get('school', {})
           print(f"Generated timetable rows: {len(rows)}")
@@ -82,11 +81,8 @@ jobs:
           if bad_dates:
               raise SystemExit(f'Invalid timetable date format found: {bad_dates[:3]}')
 
-          target = [r for r in rows if str(r.get('grade')) == '1' and str(r.get('className')) == '5']
-          if not target:
-              raise SystemExit('No rows found for default class 1학년 5반')
-          print(f"1학년 5반 rows: {len(target)}")
-          print('Timetable sample:', target[0])
+          print('No hard-coded default class/timetable validation is used.')
+          print('Timetable sample:', rows[0])
           print('Schedule sample:', schedule['rows'][0])
           PY
 
