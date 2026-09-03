@@ -51,7 +51,16 @@ jobs:
 
           data = json.loads(p.read_text(encoding='utf-8'))
           rows = data.get('rows', [])
+          school = data.get('school', {})
           print(f"Generated timetable rows: {len(rows)}")
+          print(f"School: {school}")
+
+          if school.get('name') != '군포중앙고등학교':
+              raise SystemExit(f"Unexpected school name: {school.get('name')!r}")
+          if school.get('officeCode') != 'J10':
+              raise SystemExit(f"Unexpected office code: {school.get('officeCode')!r}")
+          if school.get('schoolCode') != '7531272':
+              raise SystemExit(f"Unexpected school code: {school.get('schoolCode')!r}")
           if not rows:
               raise SystemExit('NEIS returned no timetable rows')
 
@@ -73,16 +82,35 @@ jobs:
 
       - name: Persist timetable data
         run: |
+          set -e
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/timetable.json
-          if git diff --cached --quiet; then
-            echo 'No timetable data changes.'
-          else
+          cp data/timetable.json /tmp/timetable.json
+
+          for attempt in 1 2 3; do
+            echo "Persist attempt ${attempt}"
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/timetable.json data/timetable.json
+            git add data/timetable.json
+
+            if git diff --cached --quiet; then
+              echo 'No timetable data changes.'
+              exit 0
+            fi
+
             git commit -m 'chore: update timetable data'
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
+            if git push origin HEAD:main; then
+              echo 'Timetable data pushed successfully.'
+              exit 0
+            fi
+
+            echo 'Push raced with another main update; retrying.'
+            git reset --hard origin/main
+          done
+
+          echo 'Failed to persist timetable data after 3 attempts.'
+          exit 1
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
