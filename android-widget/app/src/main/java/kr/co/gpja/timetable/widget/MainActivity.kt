@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.text.InputType
 import android.webkit.JavascriptInterface
 import android.webkit.PermissionRequest
 import android.webkit.WebChromeClient
@@ -14,8 +15,10 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -33,6 +36,7 @@ class MainActivity : Activity() {
         private const val SITE_URL = "https://test20000-hub.github.io/GPJA_timetable/"
         private const val NOTIFICATION_REQUEST_CODE = 1001
         private const val CAMERA_REQUEST_CODE = 1002
+        private const val ADMIN_AUTH_VERSION = 1
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,17 +89,62 @@ class MainActivity : Activity() {
 
     private fun ensureRoleAndLoad() {
         val existing = prefs.getString("role", null)
-        if (existing != null) {
+        if (existing == "admin" && prefs.getInt("admin_auth_version", 0) != ADMIN_AUTH_VERSION) {
+            prefs.edit().remove("role").remove("approved").putInt("admin_auth_version", 0).apply()
+        }
+        val role = prefs.getString("role", null)
+        if (role != null) {
             loadSite()
             return
         }
+        showRoleDialog()
+    }
+
+    private fun showRoleDialog() {
         android.app.AlertDialog.Builder(this)
             .setTitle("앱 역할 선택")
-            .setMessage("이 휴대폰을 관리자 앱으로 사용하시겠습니까? 관리자 앱은 다른 기기의 QR 승인 요청을 처리할 수 있습니다.")
-            .setPositiveButton("관리자 앱") { _, _ -> prefs.edit().putString("role", "admin").apply(); loadSite() }
+            .setMessage("일반 앱은 바로 사용할 수 있습니다. 관리자 앱은 등록코드가 필요합니다.")
+            .setPositiveButton("관리자 앱") { _, _ -> showAdminCodeDialog() }
             .setNegativeButton("일반 앱") { _, _ -> prefs.edit().putString("role", "user").apply(); loadSite() }
             .setCancelable(false)
             .show()
+    }
+
+    private fun showAdminCodeDialog() {
+        val input = EditText(this).apply {
+            hint = "관리자 등록코드"
+            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            setSingleLine(true)
+            setPadding(40, 0, 40, 0)
+        }
+        val container = LinearLayout(this).apply {
+            setPadding(24, 0, 24, 0)
+            addView(input, LinearLayout.LayoutParams(-1, 56))
+        }
+        val dialog = android.app.AlertDialog.Builder(this)
+            .setTitle("관리자 등록코드")
+            .setMessage("관리자 등록코드를 입력해야 관리자 앱으로 등록됩니다.")
+            .setView(container)
+            .setPositiveButton("등록", null)
+            .setNegativeButton("일반 앱으로 사용") { _, _ -> prefs.edit().putString("role", "user").apply(); loadSite() }
+            .setCancelable(false)
+            .create()
+        dialog.setOnShowListener {
+            dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                val code = input.text.toString()
+                if (BuildConfig.ADMIN_CODE.isNotEmpty() && code == BuildConfig.ADMIN_CODE) {
+                    prefs.edit().putString("role", "admin").putInt("admin_auth_version", ADMIN_AUTH_VERSION).apply()
+                    dialog.dismiss()
+                    loadSite()
+                } else {
+                    input.text.clear()
+                    input.error = "관리자 등록코드가 올바르지 않습니다."
+                }
+            }
+        }
+        dialog.show()
+        input.requestFocus()
+        dialog.window?.setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
     }
 
     private fun loadSite() {
