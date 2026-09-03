@@ -18,16 +18,6 @@ TEACHER_BY_SUBJECT = {
     '한국사': '서지연', '과학탐구실험': '손지영',
 }
 
-# User-provided fixed default timetable for 1학년 5반, 2학기.
-# The values are normalized subject names used only for change detection.
-DEFAULT_TIMETABLE_1_5 = {
-    0: {1: '체육', 2: '정보', 3: '영어', 4: '수학', 5: '과학', 6: '진로', 7: '국어'},
-    1: {1: '영어', 2: '국어', 3: '사회', 4: '수학', 5: '정보', 6: '과학', 7: '한국사'},
-    2: {1: '사회', 2: '한국사', 3: '과학', 4: '', 5: ''},
-    3: {1: '사회', 2: '과학', 3: '한국사', 4: '국어', 5: '과학탐구실험', 6: '수학', 7: '영어'},
-    4: {1: '영어', 2: '체육', 3: '사회', 4: '수학', 5: '국어', 6: '정보'},
-}
-
 
 def school_year():
     now = datetime.now()
@@ -191,30 +181,11 @@ def build_weekly_baseline(normalized):
 def add_change_metadata(normalized, previous_rows):
     baseline = build_weekly_baseline(normalized)
     changed = 0
-    target_changes = []
 
     for row in normalized:
         key = timetable_key(row)
-        old = None
+        old = baseline.get(key)
 
-        # 1학년 5반 2학기는 사용자 제공 고정 시간표를 최우선 기준으로 사용합니다.
-        if row.get('grade') == '1' and row.get('className') == '5':
-            try:
-                weekday = datetime.strptime(str(row['date']), '%Y-%m-%d').weekday()
-                period = int(str(row.get('period', '')).strip())
-            except (KeyError, ValueError):
-                weekday = -1
-                period = -1
-            if weekday in DEFAULT_TIMETABLE_1_5 and period in DEFAULT_TIMETABLE_1_5[weekday]:
-                default_subject = DEFAULT_TIMETABLE_1_5[weekday][period]
-                if default_subject:
-                    old = (default_subject, '', '')
-
-        # 다른 반은 기존의 인접 주 비교를 사용합니다.
-        if old is None:
-            old = baseline.get(key)
-
-        # 기존 변경 정보는 인접 주 데이터가 없는 가장자리 날짜에서 보존합니다.
         if old is None:
             for previous in previous_rows:
                 if timetable_key(previous) != key:
@@ -235,24 +206,14 @@ def add_change_metadata(normalized, previous_rows):
         new_subject = str(row.get('subject') or '').strip()
         new_room = str(row.get('room') or '').strip()
         new_teacher = str(row.get('teacher') or '').strip()
-
         subject_changed = old_subject != new_subject
-        # 고정 시간표에는 교실/교사 정보가 없으므로 1-5의 교실/교사 변경은
-        # 여기서 추측하지 않습니다. 과목 변경만 확실하게 표시합니다.
-        is_fixed_1_5 = row.get('grade') == '1' and row.get('className') == '5'
-        room_changed = (not is_fixed_1_5) and old_room != new_room
-        teacher_changed = (not is_fixed_1_5) and bool(old_teacher and new_teacher and old_teacher != new_teacher)
+        room_changed = old_room != new_room
+        teacher_changed = bool(old_teacher and new_teacher and old_teacher != new_teacher)
 
         if not (subject_changed or room_changed or teacher_changed):
             continue
 
-        if subject_changed:
-            change_type = 'subject'
-        elif teacher_changed:
-            change_type = 'teacher'
-        else:
-            change_type = 'room'
-
+        change_type = 'subject' if subject_changed else ('teacher' if teacher_changed else 'room')
         row['change'] = {
             'type': change_type,
             'previousSubject': old_subject,
@@ -260,18 +221,6 @@ def add_change_metadata(normalized, previous_rows):
             'previousTeacher': old_teacher,
         }
         changed += 1
-
-        if is_fixed_1_5 and subject_changed:
-            target_changes.append(
-                f"{row['date']} {row['period']}교시: {old_subject or '없음'} -> {new_subject or '없음'}"
-            )
-
-    if target_changes:
-        print('1학년 5반 detected changes:')
-        for item in target_changes:
-            print(f'  {item}')
-    else:
-        print('1학년 5반 detected changes: none')
 
     return changed
 
@@ -298,9 +247,14 @@ def main():
         if not date or not grade or not cls or not period:
             continue
         item = {
-            'date': date, 'grade': grade, 'className': cls, 'period': period,
-            'subject': subject, 'room': str(r.get('CLRM_NM', '') or '').strip(),
-            'teacher': teacher_name(r, subject), 'course': str(r.get('ORD_SC_NM', '') or '').strip(),
+            'date': date,
+            'grade': grade,
+            'className': cls,
+            'period': period,
+            'subject': subject,
+            'room': str(r.get('CLRM_NM', '') or '').strip(),
+            'teacher': teacher_name(r, subject),
+            'course': str(r.get('ORD_SC_NM', '') or '').strip(),
             'department': str(r.get('DDDEP_NM', '') or '').strip(),
         }
         key = tuple(item.items())
@@ -311,12 +265,13 @@ def main():
     if not normalized:
         raise SystemExit('NEIS returned no usable timetable rows; refusing to overwrite data/timetable.json')
 
-    normalized.sort(key=lambda x: (x['date'], int(x['grade']) if x['grade'].isdigit() else x['grade'], x['className'], int(x['period']) if x['period'].isdigit() else x['period']))
+    normalized.sort(key=lambda x: (
+        x['date'],
+        int(x['grade']) if x['grade'].isdigit() else x['grade'],
+        x['className'],
+        int(x['period']) if x['period'].isdigit() else x['period'],
+    ))
     changed_count = add_change_metadata(normalized, previous_rows)
-
-    target_rows = [r for r in normalized if r['grade'] == '1' and r['className'] == '5']
-    if not target_rows:
-        raise SystemExit('No timetable rows found for required default class 1학년 5반')
 
     dates = sorted({r['date'] for r in normalized})
     out = {
@@ -324,14 +279,12 @@ def main():
         'updatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
         'source': 'NEIS 고등학교시간표 + 지정 교사 매핑',
         'schoolYear': school_year(),
-        'school': {'name': EXPECTED_SCHOOL_NAME, 'officeCode': OFFICE_CODE, 'schoolCode': SCHOOL_CODE},
-        'teacherSource': '사용자 지정 과목별 교사 매핑(컴시간 연동 전 임시 적용)',
-        'defaultTimetable': {
-            'grade': '1',
-            'className': '5',
-            'semester': 2,
-            'description': '사용자 제공 2학기 기본 시간표를 변경 감지 기준으로 사용',
+        'school': {
+            'name': EXPECTED_SCHOOL_NAME,
+            'officeCode': OFFICE_CODE,
+            'schoolCode': SCHOOL_CODE,
         },
+        'teacherSource': '사용자 지정 과목별 교사 매핑(컴시간 연동 전 임시 적용)',
         'dateRange': {'from': dates[0], 'to': dates[-1]},
         'changeCount': changed_count,
     }
@@ -343,10 +296,9 @@ def main():
     os.replace(temp_path, output_path)
 
     print(f'Academic year: {school_year()}')
-    print(f'Fetched {len(normalized)} timetable rows total')
-    print(f'Changed timetable entries: {changed_count}')
-    print(f'Date range: {dates[0]} -> {dates[-1]}')
-    print(f'1학년 5반 rows: {len(target_rows)}')
+    print(f'Fetched {len(normalized)} timetable rows')
+    print(f'Change metadata: {changed_count} rows')
+    print(f'Date range: {dates[0]} .. {dates[-1]}')
 
 
 if __name__ == '__main__':
