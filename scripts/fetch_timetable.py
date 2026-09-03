@@ -7,7 +7,8 @@ from datetime import datetime, timezone
 KEY = os.environ.get('NEIS_API_KEY', '').strip()
 BASE = 'https://open.neis.go.kr/hub/hisTimetable'
 OFFICE_CODE = 'J10'
-SCHOOL_CODE = '7530174'
+SCHOOL_CODE = '7531272'
+EXPECTED_SCHOOL_NAME = '군포중앙고등학교'
 
 
 def school_year():
@@ -63,12 +64,48 @@ def check_neis_error(payload, semester, page):
                 )
 
 
+def validate_school(rows, semester, page):
+    if not rows:
+        return
+
+    school_names = {str(r.get('SCHUL_NM', '')).strip() for r in rows}
+    school_names.discard('')
+    office_codes = {str(r.get('ATPT_OFCDC_SC_CODE', '')).strip() for r in rows}
+    office_codes.discard('')
+    school_codes = {str(r.get('SD_SCHUL_CODE', '')).strip() for r in rows}
+    school_codes.discard('')
+
+    if school_names and school_names != {EXPECTED_SCHOOL_NAME}:
+        raise RuntimeError(
+            f'Unexpected NEIS school name (semester={semester}, page={page}): '
+            f'{sorted(school_names)}; expected {EXPECTED_SCHOOL_NAME}'
+        )
+    if office_codes and office_codes != {OFFICE_CODE}:
+        raise RuntimeError(
+            f'Unexpected NEIS office code (semester={semester}, page={page}): '
+            f'{sorted(office_codes)}; expected {OFFICE_CODE}'
+        )
+    if school_codes and school_codes != {SCHOOL_CODE}:
+        raise RuntimeError(
+            f'Unexpected NEIS school code (semester={semester}, page={page}): '
+            f'{sorted(school_codes)}; expected {SCHOOL_CODE}'
+        )
+
+    if not school_names:
+        raise RuntimeError(
+            f'NEIS timetable response has no SCHUL_NM (semester={semester}, page={page})'
+        )
+
+    print(f'Validated NEIS school: {EXPECTED_SCHOOL_NAME} ({OFFICE_CODE}/{SCHOOL_CODE})')
+
+
 def fetch_semester(semester):
     rows = []
     for page in range(1, 101):
         payload = fetch(page, semester)
         check_neis_error(payload, semester, page)
         batch = rows_from(payload)
+        validate_school(batch, semester, page)
         rows.extend(batch)
         if len(batch) < 1000:
             break
@@ -144,7 +181,7 @@ def main():
         'source': 'NEIS 고등학교시간표',
         'schoolYear': school_year(),
         'school': {
-            'name': '군포중앙고등학교',
+            'name': EXPECTED_SCHOOL_NAME,
             'officeCode': OFFICE_CODE,
             'schoolCode': SCHOOL_CODE,
         },
