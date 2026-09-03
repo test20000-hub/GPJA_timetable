@@ -238051,22 +238051,34 @@
       "grade": "1",
       "className": "2",
       "period": "5",
-      "subject": "공통수학2",
+      "subject": "체육2",
       "room": "2",
-      "teacher": "송희영",
+      "teacher": "채승희",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "subject",
+        "previousSubject": "공통수학2",
+        "previousRoom": "2",
+        "previousTeacher": "송희영"
+      }
     },
     {
       "date": "2026-09-14",
       "grade": "1",
       "className": "2",
       "period": "6",
-      "subject": "체육2",
+      "subject": "공통수학2",
       "room": "2",
-      "teacher": "채승희",
+      "teacher": "송희영",
       "course": "일반계",
-      "department": "일반학과"
+      "department": "일반학과",
+      "change": {
+        "type": "subject",
+        "previousSubject": "체육2",
+        "previousRoom": "2",
+        "previousTeacher": "채승희"
+      }
     },
     {
       "date": "2026-09-14",
@@ -258642,7 +258654,7 @@
       "department": "일반학과"
     }
   ],
-  "updatedAt": "2026-09-03 23:36 KST",
+  "updatedAt": "2026-09-04 06:03 KST",
   "source": "NEIS 고등학교시간표 + 지정 교사 매핑",
   "schoolYear": 2026,
   "school": {
@@ -258655,5 +258667,5 @@
     "from": "2026-03-09",
     "to": "2026-09-26"
   },
-  "changeCount": 3725
+  "changeCount": 3727
 }
