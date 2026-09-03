@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#111827" />
   <meta name="description" content="군포중앙고등학교 시간표" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
   <title>군포중앙고 시간표</title>
 </head>
 <body>
@@ -18,15 +18,15 @@
         <div>
           <p class="eyebrow">GPJA · TIMETABLE</p>
           <h1>군포중앙고등학교</h1>
-          <p class="hero-subtitle">오늘의 수업부터 주간 시간표까지 한눈에 확인하세요.</p>
+          <p class="hero-subtitle">학년·반만 고르면 이번 주 수업을 바로 확인할 수 있습니다.</p>
         </div>
       </div>
       <button id="installBtn" class="icon-btn" hidden aria-label="앱 설치" title="앱 설치">＋</button>
     </header>
 
     <nav class="app-tabs" aria-label="서비스 메뉴">
-      <a class="app-tab active" href="index.html" aria-current="page">시간표</a>
-      <a class="app-tab" href="schedule.html">학사일정</a>
+      <a class="app-tab active" href="index.html" aria-current="page"><span>▦</span> 시간표</a>
+      <a class="app-tab" href="schedule.html"><span>□</span> 학사일정</a>
     </nav>
 
     <section class="week-card card" aria-label="주간 선택">
@@ -48,7 +48,7 @@
         <span class="control-label">반</span>
         <label class="select-wrap"><select id="classSelect" aria-label="반 선택"></select><span class="select-chevron">⌄</span></label>
       </div>
-      <button id="todayBtn" class="today-btn"><span>●</span> 오늘로 이동</button>
+      <button id="todayBtn" class="today-btn"><span>●</span> 이번 주</button>
     </section>
 
     <section id="notice" class="notice" hidden></section>
@@ -59,7 +59,10 @@
         <p class="section-kicker">CLASS TIMETABLE</p>
         <h2>주간 시간표</h2>
       </div>
-      <span class="scroll-hint">좌우로 밀어서 보기</span>
+      <div class="legend" aria-label="시간표 표시 안내">
+        <span><i class="legend-dot changed-dot"></i>변경</span>
+        <span><i class="legend-bar subject-bar"></i>과목</span>
+      </div>
     </section>
     <section id="timetable" class="timetable card" aria-live="polite"></section>
   </main>
@@ -70,6 +73,6 @@
       <span class="version">v1.0.0</span>
     </div>
   </footer>
-  <script src="app.js?v=5" defer></script>
+  <script src="app.js?v=6" defer></script>
 </body>
 </html>
