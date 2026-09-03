@@ -18,6 +18,16 @@ TEACHER_BY_SUBJECT = {
     '한국사': '서지연', '과학탐구실험': '손지영',
 }
 
+# User-provided fixed default timetable for 1학년 5반, 2학기.
+# The values are normalized subject names used only for change detection.
+DEFAULT_TIMETABLE_1_5 = {
+    0: {1: '체육', 2: '정보', 3: '영어', 4: '수학', 5: '과학', 6: '진로', 7: '국어'},
+    1: {1: '영어', 2: '국어', 3: '사회', 4: '수학', 5: '정보', 6: '과학', 7: '한국사'},
+    2: {1: '사회', 2: '한국사', 3: '과학', 4: '', 5: ''},
+    3: {1: '사회', 2: '과학', 3: '한국사', 4: '국어', 5: '과학탐구실험', 6: '수학', 7: '영어'},
+    4: {1: '영어', 2: '체육', 3: '사회', 4: '수학', 5: '국어', 6: '정보'},
+}
+
 
 def school_year():
     now = datetime.now()
@@ -134,7 +144,6 @@ def timetable_key(row):
 
 
 def slot_key(row):
-    """Key a lesson by weekday + grade/class + period so adjacent weeks can be compared."""
     try:
         weekday = datetime.strptime(str(row['date']), '%Y-%m-%d').weekday()
     except (KeyError, ValueError):
@@ -151,13 +160,6 @@ def signature(row):
 
 
 def build_weekly_baseline(normalized):
-    """Infer a stable timetable from neighboring weeks.
-
-    A temporary weekly change is detected when the same weekday/grade/class/period
-    has the same lesson in at least two nearby weeks, while the current week's lesson
-    differs. This catches swaps such as Monday subject exchanges and whole-day
-    Wednesday/Thursday exchanges without relying on a previous generated snapshot.
-    """
     groups = {}
     for row in normalized:
         groups.setdefault(slot_key(row), []).append(row)
@@ -170,7 +172,6 @@ def build_weekly_baseline(normalized):
                 current_date = datetime.strptime(str(row['date']), '%Y-%m-%d')
             except (KeyError, ValueError):
                 continue
-
             neighbors = []
             for weeks in (1, 2, 3):
                 for delta in (-7 * weeks, 7 * weeks):
@@ -178,30 +179,42 @@ def build_weekly_baseline(normalized):
                     neighbor = by_date.get(neighbor_date)
                     if neighbor:
                         neighbors.append(neighbor)
-
             counts = Counter(signature(r) for r in neighbors)
             if not counts:
                 continue
-
             best_sig, best_count = counts.most_common(1)[0]
-            # Require two independent neighboring weeks to agree. This avoids
-            # flagging ordinary one-off weekly schedule differences as changes.
             if best_count >= 2 and signature(row) != best_sig:
                 baseline[timetable_key(row)] = best_sig
-
     return baseline
 
 
 def add_change_metadata(normalized, previous_rows):
     baseline = build_weekly_baseline(normalized)
     changed = 0
+    target_changes = []
 
     for row in normalized:
         key = timetable_key(row)
-        old = baseline.get(key)
+        old = None
 
-        # Keep an already-established baseline when adjacent-week evidence is not
-        # available (for example at the edge of the fetched date range).
+        # 1학년 5반 2학기는 사용자 제공 고정 시간표를 최우선 기준으로 사용합니다.
+        if row.get('grade') == '1' and row.get('className') == '5':
+            try:
+                weekday = datetime.strptime(str(row['date']), '%Y-%m-%d').weekday()
+                period = int(str(row.get('period', '')).strip())
+            except (KeyError, ValueError):
+                weekday = -1
+                period = -1
+            if weekday in DEFAULT_TIMETABLE_1_5 and period in DEFAULT_TIMETABLE_1_5[weekday]:
+                default_subject = DEFAULT_TIMETABLE_1_5[weekday][period]
+                if default_subject:
+                    old = (default_subject, '', '')
+
+        # 다른 반은 기존의 인접 주 비교를 사용합니다.
+        if old is None:
+            old = baseline.get(key)
+
+        # 기존 변경 정보는 인접 주 데이터가 없는 가장자리 날짜에서 보존합니다.
         if old is None:
             for previous in previous_rows:
                 if timetable_key(previous) != key:
@@ -224,8 +237,12 @@ def add_change_metadata(normalized, previous_rows):
         new_teacher = str(row.get('teacher') or '').strip()
 
         subject_changed = old_subject != new_subject
-        room_changed = old_room != new_room
-        teacher_changed = bool(old_teacher and new_teacher and old_teacher != new_teacher)
+        # 고정 시간표에는 교실/교사 정보가 없으므로 1-5의 교실/교사 변경은
+        # 여기서 추측하지 않습니다. 과목 변경만 확실하게 표시합니다.
+        is_fixed_1_5 = row.get('grade') == '1' and row.get('className') == '5'
+        room_changed = (not is_fixed_1_5) and old_room != new_room
+        teacher_changed = (not is_fixed_1_5) and bool(old_teacher and new_teacher and old_teacher != new_teacher)
+
         if not (subject_changed or room_changed or teacher_changed):
             continue
 
@@ -243,6 +260,18 @@ def add_change_metadata(normalized, previous_rows):
             'previousTeacher': old_teacher,
         }
         changed += 1
+
+        if is_fixed_1_5 and subject_changed:
+            target_changes.append(
+                f"{row['date']} {row['period']}교시: {old_subject or '없음'} -> {new_subject or '없음'}"
+            )
+
+    if target_changes:
+        print('1학년 5반 detected changes:')
+        for item in target_changes:
+            print(f'  {item}')
+    else:
+        print('1학년 5반 detected changes: none')
 
     return changed
 
@@ -297,6 +326,12 @@ def main():
         'schoolYear': school_year(),
         'school': {'name': EXPECTED_SCHOOL_NAME, 'officeCode': OFFICE_CODE, 'schoolCode': SCHOOL_CODE},
         'teacherSource': '사용자 지정 과목별 교사 매핑(컴시간 연동 전 임시 적용)',
+        'defaultTimetable': {
+            'grade': '1',
+            'className': '5',
+            'semester': 2,
+            'description': '사용자 제공 2학기 기본 시간표를 변경 감지 기준으로 사용',
+        },
         'dateRange': {'from': dates[0], 'to': dates[-1]},
         'changeCount': changed_count,
     }
