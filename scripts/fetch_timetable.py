@@ -3,7 +3,8 @@ import os
 import re
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from collections import Counter
+from datetime import datetime, timezone, timedelta
 
 KEY = os.environ.get('NEIS_API_KEY', '').strip()
 BASE = 'https://open.neis.go.kr/hub/hisTimetable'
@@ -132,50 +133,95 @@ def timetable_key(row):
     return (str(row.get('date', '')), str(row.get('grade', '')), str(row.get('className', '')), str(row.get('period', '')))
 
 
-def build_baseline(previous_rows, normalized):
-    """Keep a stable normal timetable while allowing this week's temporary swaps.
+def slot_key(row):
+    """Key a lesson by weekday + grade/class + period so adjacent weeks can be compared."""
+    try:
+        weekday = datetime.strptime(str(row['date']), '%Y-%m-%d').weekday()
+    except (KeyError, ValueError):
+        weekday = -1
+    return (weekday, str(row.get('grade', '')), str(row.get('className', '')), str(row.get('period', '')))
 
-    The previous generated data is treated as a baseline only when it is not itself
-    marked as a temporary change. Once a slot has a change record, its previousSubject
-    is the stable baseline. This prevents Monday/Wednesday/Thursday swaps from being
-    forgotten on the next scheduled fetch.
+
+def signature(row):
+    return (
+        str(row.get('subject') or '').strip(),
+        str(row.get('room') or '').strip(),
+        str(row.get('teacher') or '').strip(),
+    )
+
+
+def build_weekly_baseline(normalized):
+    """Infer a stable timetable from neighboring weeks.
+
+    A temporary weekly change is detected when the same weekday/grade/class/period
+    has the same lesson in at least two nearby weeks, while the current week's lesson
+    differs. This catches swaps such as Monday subject exchanges and whole-day
+    Wednesday/Thursday exchanges without relying on a previous generated snapshot.
     """
-    baseline = {}
-    for row in previous_rows:
-        key = timetable_key(row)
-        change = row.get('change') or {}
-        if change.get('previousSubject'):
-            baseline[key] = {
-                'subject': str(change.get('previousSubject') or '').strip(),
-                'room': str(change.get('previousRoom') or '').strip(),
-                'teacher': str(change.get('previousTeacher') or '').strip(),
-            }
-        else:
-            baseline[key] = {
-                'subject': str(row.get('subject') or '').strip(),
-                'room': str(row.get('room') or '').strip(),
-                'teacher': str(row.get('teacher') or '').strip(),
-            }
+    groups = {}
+    for row in normalized:
+        groups.setdefault(slot_key(row), []).append(row)
 
-    # A slot absent from the old snapshot has no safe baseline, so don't invent one.
+    baseline = {}
+    for key, rows in groups.items():
+        by_date = {str(r.get('date')): r for r in rows}
+        for row in rows:
+            try:
+                current_date = datetime.strptime(str(row['date']), '%Y-%m-%d')
+            except (KeyError, ValueError):
+                continue
+
+            neighbors = []
+            for weeks in (1, 2, 3):
+                for delta in (-7 * weeks, 7 * weeks):
+                    neighbor_date = (current_date + timedelta(days=delta)).strftime('%Y-%m-%d')
+                    neighbor = by_date.get(neighbor_date)
+                    if neighbor:
+                        neighbors.append(neighbor)
+
+            counts = Counter(signature(r) for r in neighbors)
+            if not counts:
+                continue
+
+            best_sig, best_count = counts.most_common(1)[0]
+            # Require two independent neighboring weeks to agree. This avoids
+            # flagging ordinary one-off weekly schedule differences as changes.
+            if best_count >= 2 and signature(row) != best_sig:
+                baseline[timetable_key(row)] = best_sig
+
     return baseline
 
 
 def add_change_metadata(normalized, previous_rows):
-    baseline = build_baseline(previous_rows, normalized)
+    baseline = build_weekly_baseline(normalized)
     changed = 0
+
     for row in normalized:
         key = timetable_key(row)
         old = baseline.get(key)
+
+        # Keep an already-established baseline when adjacent-week evidence is not
+        # available (for example at the edge of the fetched date range).
+        if old is None:
+            for previous in previous_rows:
+                if timetable_key(previous) != key:
+                    continue
+                previous_change = previous.get('change') or {}
+                if previous_change.get('previousSubject'):
+                    old = (
+                        str(previous_change.get('previousSubject') or '').strip(),
+                        str(previous_change.get('previousRoom') or '').strip(),
+                        str(previous_change.get('previousTeacher') or '').strip(),
+                    )
+                break
+
         if old is None:
             continue
 
-        old_subject = old['subject']
-        old_room = old['room']
-        old_teacher = old['teacher']
-        new_subject = row['subject']
-        new_room = row['room']
-        new_teacher = row['teacher']
+        old_subject, old_room, old_teacher = old
+        new_subject = str(row.get('subject') or '').strip()
+        new_room = str(row.get('room') or '').strip()
+        new_teacher = str(row.get('teacher') or '').strip()
 
         subject_changed = old_subject != new_subject
         room_changed = old_room != new_room
@@ -197,6 +243,7 @@ def add_change_metadata(normalized, previous_rows):
             'previousTeacher': old_teacher,
         }
         changed += 1
+
     return changed
 
 
