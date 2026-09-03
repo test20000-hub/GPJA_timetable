@@ -7,7 +7,7 @@
   <meta name="description" content="군포중앙고등학교 학사일정" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
   <title>군포중앙고 학사일정</title>
 </head>
 <body>
@@ -40,19 +40,24 @@
     </section>
 
     <section class="schedule-actions">
-      <button id="todayBtn" class="today-btn">● 오늘로 이동</button>
+      <div class="view-switch" role="group" aria-label="학사일정 보기 방식">
+        <button id="calendarViewBtn" class="view-btn active" type="button">캘린더</button>
+        <button id="listViewBtn" class="view-btn" type="button">목록</button>
+      </div>
+      <button id="todayBtn" class="today-btn" type="button">● 오늘로 이동</button>
     </section>
 
     <section id="notice" class="notice" hidden></section>
-    <section id="schedule" class="schedule-list" aria-live="polite"></section>
+    <section id="calendar" class="calendar card" aria-live="polite"></section>
+    <section id="schedule" class="schedule-list" aria-live="polite" hidden></section>
   </main>
 
   <footer>
     <div class="footer-inner">
       <div>NEIS 학사일정 · 군포중앙고등학교<br><small>© 2026 GPJA Timetable. All rights reserved.</small></div>
-      <span class="version">v1.0.0</span>
+      <span class="version">v1.1.0</span>
     </div>
   </footer>
-  <script src="schedule.js?v=1" defer></script>
+  <script src="schedule.js?v=2" defer></script>
 </body>
 </html>
