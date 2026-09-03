@@ -12,8 +12,6 @@ EXPECTED_SCHOOL_NAME = '군포중앙고등학교'
 
 
 def school_year():
-    # NEIS AY follows the school year. In Korea the school year begins in March,
-    # so Jan/Feb still belong to the previous academic year.
     now = datetime.now()
     return now.year if now.month >= 3 else now.year - 1
 
@@ -58,44 +56,23 @@ def check_neis_error(payload, semester, page):
             code = str(result_info.get('CODE', '')).strip()
             message = str(result_info.get('MESSAGE', '')).strip()
             if code and code != 'INFO-000':
-                raise RuntimeError(
-                    f'NEIS API error (semester={semester}, page={page}): '
-                    f'{code} {message}'
-                )
+                raise RuntimeError(f'NEIS API error (semester={semester}, page={page}): {code} {message}')
 
 
 def validate_school(rows, semester, page):
     if not rows:
         return
-
-    school_names = {str(r.get('SCHUL_NM', '')).strip() for r in rows}
-    school_names.discard('')
-    office_codes = {str(r.get('ATPT_OFCDC_SC_CODE', '')).strip() for r in rows}
-    office_codes.discard('')
-    school_codes = {str(r.get('SD_SCHUL_CODE', '')).strip() for r in rows}
-    school_codes.discard('')
-
+    school_names = {str(r.get('SCHUL_NM', '')).strip() for r in rows if str(r.get('SCHUL_NM', '')).strip()}
+    office_codes = {str(r.get('ATPT_OFCDC_SC_CODE', '')).strip() for r in rows if str(r.get('ATPT_OFCDC_SC_CODE', '')).strip()}
+    school_codes = {str(r.get('SD_SCHUL_CODE', '')).strip() for r in rows if str(r.get('SD_SCHUL_CODE', '')).strip()}
     if school_names and school_names != {EXPECTED_SCHOOL_NAME}:
-        raise RuntimeError(
-            f'Unexpected NEIS school name (semester={semester}, page={page}): '
-            f'{sorted(school_names)}; expected {EXPECTED_SCHOOL_NAME}'
-        )
+        raise RuntimeError(f'Unexpected NEIS school name (semester={semester}, page={page}): {sorted(school_names)}; expected {EXPECTED_SCHOOL_NAME}')
     if office_codes and office_codes != {OFFICE_CODE}:
-        raise RuntimeError(
-            f'Unexpected NEIS office code (semester={semester}, page={page}): '
-            f'{sorted(office_codes)}; expected {OFFICE_CODE}'
-        )
+        raise RuntimeError(f'Unexpected NEIS office code (semester={semester}, page={page}): {sorted(office_codes)}; expected {OFFICE_CODE}')
     if school_codes and school_codes != {SCHOOL_CODE}:
-        raise RuntimeError(
-            f'Unexpected NEIS school code (semester={semester}, page={page}): '
-            f'{sorted(school_codes)}; expected {SCHOOL_CODE}'
-        )
-
+        raise RuntimeError(f'Unexpected NEIS school code (semester={semester}, page={page}): {sorted(school_codes)}; expected {SCHOOL_CODE}')
     if not school_names:
-        raise RuntimeError(
-            f'NEIS timetable response has no SCHUL_NM (semester={semester}, page={page})'
-        )
-
+        raise RuntimeError(f'NEIS timetable response has no SCHUL_NM (semester={semester}, page={page})')
     print(f'Validated NEIS school: {EXPECTED_SCHOOL_NAME} ({OFFICE_CODE}/{SCHOOL_CODE})')
 
 
@@ -122,9 +99,71 @@ def normalize_date(value):
     return ''
 
 
+def teacher_name(row):
+    # NEIS timetable feeds can expose teacher names under different optional keys.
+    for key in ('TCHR_NM', 'TEACHER_NM', 'TEACH_NM', 'TEACHER', 'TCHR'):
+        value = str(row.get(key, '') or '').strip()
+        if value:
+            return value
+    return ''
+
+
+def load_previous(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            previous = json.load(f)
+        rows = previous.get('rows', [])
+        if isinstance(rows, list):
+            return rows
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        pass
+    return []
+
+
+def add_change_metadata(normalized, previous_rows):
+    previous = {}
+    for row in previous_rows:
+        key = (str(row.get('date', '')), str(row.get('grade', '')), str(row.get('className', '')), str(row.get('period', '')))
+        previous[key] = row
+
+    changed = 0
+    for row in normalized:
+        key = (row['date'], row['grade'], row['className'], row['period'])
+        old = previous.get(key)
+        if old is None:
+            row['change'] = {'type': 'new'}
+            changed += 1
+            continue
+
+        old_subject = str(old.get('subject', '') or '').strip()
+        old_room = str(old.get('room', '') or '').strip()
+        old_teacher = str(old.get('teacher', '') or '').strip()
+        new_subject = row['subject']
+        new_room = row['room']
+        new_teacher = row['teacher']
+        if old_subject != new_subject or old_room != new_room or old_teacher != new_teacher:
+            if old_subject != new_subject:
+                change_type = 'subject'
+            elif old_teacher != new_teacher:
+                change_type = 'teacher'
+            else:
+                change_type = 'room'
+            row['change'] = {
+                'type': change_type,
+                'previousSubject': old_subject,
+                'previousRoom': old_room,
+                'previousTeacher': old_teacher,
+            }
+            changed += 1
+    return changed
+
+
 def main():
     if not KEY:
         raise SystemExit('NEIS_API_KEY secret is required')
+
+    output_path = 'data/timetable.json'
+    previous_rows = load_previous(output_path)
 
     rows = []
     for semester in (1, 2):
@@ -148,6 +187,7 @@ def main():
             'period': period,
             'subject': subject,
             'room': str(r.get('CLRM_NM', '') or '').strip(),
+            'teacher': teacher_name(r),
             'course': str(r.get('ORD_SC_NM', '') or '').strip(),
             'department': str(r.get('DDDEP_NM', '') or '').strip(),
         }
@@ -159,18 +199,10 @@ def main():
     if not normalized:
         raise SystemExit('NEIS returned no usable timetable rows; refusing to overwrite data/timetable.json')
 
-    normalized.sort(
-        key=lambda x: (
-            x['date'],
-            int(x['grade']) if x['grade'].isdigit() else x['grade'],
-            x['className'],
-            int(x['period']) if x['period'].isdigit() else x['period'],
-        )
-    )
+    normalized.sort(key=lambda x: (x['date'], int(x['grade']) if x['grade'].isdigit() else x['grade'], x['className'], int(x['period']) if x['period'].isdigit() else x['period']))
+    changed_count = add_change_metadata(normalized, previous_rows)
 
-    target_rows = [
-        r for r in normalized if r['grade'] == '1' and r['className'] == '5'
-    ]
+    target_rows = [r for r in normalized if r['grade'] == '1' and r['className'] == '5']
     if not target_rows:
         raise SystemExit('No timetable rows found for required default class 1학년 5반')
 
@@ -180,16 +212,12 @@ def main():
         'updatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
         'source': 'NEIS 고등학교시간표',
         'schoolYear': school_year(),
-        'school': {
-            'name': EXPECTED_SCHOOL_NAME,
-            'officeCode': OFFICE_CODE,
-            'schoolCode': SCHOOL_CODE,
-        },
+        'school': {'name': EXPECTED_SCHOOL_NAME, 'officeCode': OFFICE_CODE, 'schoolCode': SCHOOL_CODE},
         'dateRange': {'from': dates[0], 'to': dates[-1]},
+        'changeCount': changed_count,
     }
 
     os.makedirs('data', exist_ok=True)
-    output_path = 'data/timetable.json'
     temp_path = output_path + '.tmp'
     with open(temp_path, 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
@@ -197,6 +225,7 @@ def main():
 
     print(f'Academic year: {school_year()}')
     print(f'Fetched {len(normalized)} timetable rows total')
+    print(f'Changed timetable entries: {changed_count}')
     print(f'Date range: {dates[0]} -> {dates[-1]}')
     print(f'1학년 5반 rows: {len(target_rows)}')
 
