@@ -11,6 +11,7 @@ BASE = 'https://open.neis.go.kr/hub/hisTimetable'
 OFFICE_CODE = 'J10'
 SCHOOL_CODE = '7531272'
 EXPECTED_SCHOOL_NAME = '군포중앙고등학교'
+KST = timezone(timedelta(hours=9))
 
 TEACHER_BY_SUBJECT = {
     '국어': '김미경', '정보': '김기현', '영어': '여국화', '수학': '송희영',
@@ -20,7 +21,7 @@ TEACHER_BY_SUBJECT = {
 
 
 def school_year():
-    now = datetime.now()
+    now = datetime.now(KST)
     return now.year if now.month >= 3 else now.year - 1
 
 BASE_PARAMS = {
@@ -272,7 +273,7 @@ def main():
     dates = sorted({r['date'] for r in normalized})
     out = {
         'rows': normalized,
-        'updatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
+        'updatedAt': datetime.now(KST).strftime('%Y-%m-%d %H:%M KST'),
         'source': 'NEIS 고등학교시간표 + 지정 교사 매핑',
         'schoolYear': school_year(),
         'school': {'name': EXPECTED_SCHOOL_NAME, 'officeCode': OFFICE_CODE, 'schoolCode': SCHOOL_CODE},
@@ -291,6 +292,7 @@ def main():
     print(f'Fetched {len(normalized)} timetable rows total')
     print(f'Changed timetable entries: {changed_count}')
     print(f'Date range: {dates[0]} -> {dates[-1]}')
+    print(f'Updated at: {out["updatedAt"]}')
 
 
 if __name__ == '__main__':
