@@ -11,18 +11,29 @@ const fmt = d => `${d.getFullYear()}년 ${d.getMonth() + 1}월`;
 const weekdayNames = ['일', '월', '화', '수', '목', '금', '토'];
 
 function showNotice(text) {
-  $('#notice').textContent = text;
-  $('#notice').hidden = !text;
+  const el = $('#notice');
+  el.textContent = text;
+  el.hidden = !text;
 }
 
 function monthContext() {
   const now = new Date();
   const base = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
-  return { now, base, year: base.getFullYear(), month: base.getMonth(), monthKey: `${base.getFullYear()}-${pad(base.getMonth() + 1)}` };
+  return {
+    now,
+    base,
+    year: base.getFullYear(),
+    month: base.getMonth(),
+    monthKey: `${base.getFullYear()}-${pad(base.getMonth() + 1)}`
+  };
 }
 
 function eventHtml(r, compact = false) {
-  const grade = [r.grade1, r.grade2, r.grade3].map((v, i) => v === 'Y' ? `${i + 1}학년` : '').filter(Boolean).join(' · ') || '전교';
+  const grade = [r.grade1, r.grade2, r.grade3]
+    .map((v, i) => v === 'Y' ? `${i + 1}학년` : '')
+    .filter(Boolean)
+    .join(' · ') || '전교';
+
   return `<div class="calendar-event${compact ? ' calendar-event-compact' : ''}" title="${esc(r.event)}${r.content ? ` · ${esc(r.content)}` : ''}">
     <strong>${esc(r.event)}</strong>
     ${!compact && r.content ? `<span>${esc(r.content)}</span>` : ''}
@@ -32,7 +43,10 @@ function eventHtml(r, compact = false) {
 
 function renderCalendar(monthRows, base, today) {
   const grouped = {};
-  monthRows.forEach(r => (grouped[r.date] ||= []).push(r));
+  monthRows.forEach(r => {
+    if (!r.date) return;
+    (grouped[r.date] ||= []).push(r);
+  });
 
   const first = new Date(base.getFullYear(), base.getMonth(), 1);
   const last = new Date(base.getFullYear(), base.getMonth() + 1, 0);
@@ -42,13 +56,14 @@ function renderCalendar(monthRows, base, today) {
   end.setDate(last.getDate() + (6 - last.getDay()));
 
   const cells = [];
-  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+  for (const d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
     const date = iso(d);
     const inMonth = d.getMonth() === base.getMonth();
     const dayRows = grouped[date] || [];
     const isToday = date === today;
     const events = dayRows.slice(0, 3).map(r => eventHtml(r, true)).join('');
     const more = dayRows.length > 3 ? `<div class="calendar-more">+${dayRows.length - 3}개</div>` : '';
+
     cells.push(`<div class="calendar-cell${inMonth ? '' : ' outside-month'}${isToday ? ' calendar-today' : ''}" data-date="${date}">
       <div class="calendar-day-number">${d.getDate()}</div>
       <div class="calendar-events">${events}${more}</div>
@@ -63,8 +78,13 @@ function renderList(monthRows, now) {
     $('#schedule').innerHTML = '<div class="schedule-empty card">이 달에는 등록된 학사일정이 없습니다.</div>';
     return;
   }
+
   const grouped = {};
-  monthRows.forEach(r => (grouped[r.date] ||= []).push(r));
+  monthRows.forEach(r => {
+    if (!r.date) return;
+    (grouped[r.date] ||= []).push(r);
+  });
+
   const dates = Object.keys(grouped).sort();
   const today = iso(now);
 
@@ -73,7 +93,10 @@ function renderList(monthRows, now) {
     const weekday = weekdayNames[d.getDay()];
     const isToday = date === today;
     const items = grouped[date].map(r => {
-      const grade = [r.grade1, r.grade2, r.grade3].map((v, i) => v === 'Y' ? `${i + 1}학년` : '').filter(Boolean).join(' · ') || '전교';
+      const grade = [r.grade1, r.grade2, r.grade3]
+        .map((v, i) => v === 'Y' ? `${i + 1}학년` : '')
+        .filter(Boolean)
+        .join(' · ') || '전교';
       return `<div class="schedule-item"><div class="schedule-event">${esc(r.event)}</div>${r.content ? `<div class="schedule-content">${esc(r.content)}</div>` : ''}<div class="schedule-grade">${grade}</div></div>`;
     }).join('');
     return `<article class="schedule-day card${isToday ? ' schedule-today' : ''}"><div class="schedule-date"><strong>${d.getDate()}</strong><span>${weekday}</span></div><div class="schedule-events">${items}</div></article>`;
@@ -83,64 +106,74 @@ function renderList(monthRows, now) {
 function render() {
   const { now, base, monthKey } = monthContext();
   $('#monthLabel').textContent = fmt(base);
-  const monthRows = rows.filter(r => r.date.startsWith(monthKey));
-  if (!monthRows.length && view === 'calendar') {
-    renderCalendar([], base, iso(now));
-  } else if (view === 'calendar') {
+  const monthRows = rows.filter(r => String(r.date || '').startsWith(monthKey));
+
+  if (view === 'calendar') {
     renderCalendar(monthRows, base, iso(now));
+  } else {
+    renderList(monthRows, now);
   }
-  if (view === 'list') renderList(monthRows, now);
 }
 
 function setView(nextView) {
   view = nextView;
-  const calendar = $('#calendar');
-  const list = $('#schedule');
-  const calendarBtn = $('#calendarViewBtn');
-  const listBtn = $('#listViewBtn');
-  calendar.hidden = view !== 'calendar';
-  list.hidden = view !== 'list';
-  calendarBtn.classList.toggle('active', view === 'calendar');
-  listBtn.classList.toggle('active', view === 'list');
+  $('#calendar').hidden = view !== 'calendar';
+  $('#schedule').hidden = view !== 'list';
+  $('#calendarViewBtn').classList.toggle('active', view === 'calendar');
+  $('#listViewBtn').classList.toggle('active', view === 'list');
   render();
 }
 
 async function load() {
-  const url = new URL('data/schedule.json', document.baseURI);
-  url.searchParams.set('v', Date.now());
+  const url = new URL('./data/schedule.json', document.baseURI);
+  url.searchParams.set('v', Date.now().toString());
+
   try {
-    const res = await fetch(url.toString(), { cache: 'no-store', headers: { Accept: 'application/json' } });
+    const res = await fetch(url.toString(), {
+      cache: 'no-store',
+      headers: { Accept: 'application/json' }
+    });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
     const json = await res.json();
-    if (!Array.isArray(json.rows)) throw new Error('rows 형식 오류');
-    rows = json.rows;
+    if (!json || !Array.isArray(json.rows)) throw new Error('rows 형식 오류');
+
+    rows = json.rows.filter(r => r && /^\d{4}-\d{2}-\d{2}$/.test(String(r.date || '')));
     $('#updatedLabel').textContent = json.updatedAt ? `업데이트 ${json.updatedAt}` : 'NEIS 학사일정';
     showNotice(rows.length ? '' : '학사일정 데이터가 없습니다.');
     render();
   } catch (e) {
     console.error('Schedule load failed:', e);
+    rows = [];
     $('#updatedLabel').textContent = '불러오기 실패';
-    showNotice('학사일정을 불러오지 못했습니다. 새로고침 후 다시 시도해주세요.');
+    showNotice('학사일정을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
     $('#calendar').innerHTML = '<div class="schedule-empty">학사일정 데이터를 불러오지 못했습니다.</div>';
+    $('#schedule').innerHTML = '<div class="schedule-empty card">학사일정 데이터를 불러오지 못했습니다.</div>';
   }
 }
 
-$('#prevMonth').onclick = () => { monthOffset--; render(); };
-$('#nextMonth').onclick = () => { monthOffset++; render(); };
-$('#todayBtn').onclick = () => { monthOffset = 0; render(); };
-$('#calendarViewBtn').onclick = () => setView('calendar');
-$('#listViewBtn').onclick = () => setView('list');
+$('#prevMonth').addEventListener('click', () => { monthOffset--; render(); });
+$('#nextMonth').addEventListener('click', () => { monthOffset++; render(); });
+$('#todayBtn').addEventListener('click', () => { monthOffset = 0; render(); });
+$('#calendarViewBtn').addEventListener('click', () => setView('calendar'));
+$('#listViewBtn').addEventListener('click', () => setView('list'));
+
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   deferredPrompt = e;
   $('#installBtn').hidden = false;
 });
-$('#installBtn').onclick = async () => {
+
+$('#installBtn').addEventListener('click', async () => {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
   deferredPrompt = null;
   $('#installBtn').hidden = true;
-};
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=3').catch(e => console.warn('SW registration failed', e));
+});
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js?v=4').catch(e => console.warn('SW registration failed', e));
+}
+
 setView('calendar');
 load();
