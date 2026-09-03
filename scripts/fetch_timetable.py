@@ -134,7 +134,6 @@ def timetable_key(row):
 
 
 def slot_key(row):
-    """Key a lesson by weekday + grade/class + period so adjacent weeks can be compared."""
     try:
         weekday = datetime.strptime(str(row['date']), '%Y-%m-%d').weekday()
     except (KeyError, ValueError):
@@ -151,13 +150,6 @@ def signature(row):
 
 
 def build_weekly_baseline(normalized):
-    """Infer a stable timetable from neighboring weeks.
-
-    A temporary weekly change is detected when the same weekday/grade/class/period
-    has the same lesson in at least two nearby weeks, while the current week's lesson
-    differs. This catches swaps such as Monday subject exchanges and whole-day
-    Wednesday/Thursday exchanges without relying on a previous generated snapshot.
-    """
     groups = {}
     for row in normalized:
         groups.setdefault(slot_key(row), []).append(row)
@@ -182,10 +174,7 @@ def build_weekly_baseline(normalized):
             counts = Counter(signature(r) for r in neighbors)
             if not counts:
                 continue
-
             best_sig, best_count = counts.most_common(1)[0]
-            # Require two independent neighboring weeks to agree. This avoids
-            # flagging ordinary one-off weekly schedule differences as changes.
             if best_count >= 2 and signature(row) != best_sig:
                 baseline[timetable_key(row)] = best_sig
 
@@ -199,9 +188,6 @@ def add_change_metadata(normalized, previous_rows):
     for row in normalized:
         key = timetable_key(row)
         old = baseline.get(key)
-
-        # Keep an already-established baseline when adjacent-week evidence is not
-        # available (for example at the edge of the fetched date range).
         if old is None:
             for previous in previous_rows:
                 if timetable_key(previous) != key:
@@ -222,7 +208,6 @@ def add_change_metadata(normalized, previous_rows):
         new_subject = str(row.get('subject') or '').strip()
         new_room = str(row.get('room') or '').strip()
         new_teacher = str(row.get('teacher') or '').strip()
-
         subject_changed = old_subject != new_subject
         room_changed = old_room != new_room
         teacher_changed = bool(old_teacher and new_teacher and old_teacher != new_teacher)
@@ -285,10 +270,6 @@ def main():
     normalized.sort(key=lambda x: (x['date'], int(x['grade']) if x['grade'].isdigit() else x['grade'], x['className'], int(x['period']) if x['period'].isdigit() else x['period']))
     changed_count = add_change_metadata(normalized, previous_rows)
 
-    target_rows = [r for r in normalized if r['grade'] == '1' and r['className'] == '5']
-    if not target_rows:
-        raise SystemExit('No timetable rows found for required default class 1학년 5반')
-
     dates = sorted({r['date'] for r in normalized})
     out = {
         'rows': normalized,
@@ -311,7 +292,6 @@ def main():
     print(f'Fetched {len(normalized)} timetable rows total')
     print(f'Changed timetable entries: {changed_count}')
     print(f'Date range: {dates[0]} -> {dates[-1]}')
-    print(f'1학년 5반 rows: {len(target_rows)}')
 
 
 if __name__ == '__main__':
