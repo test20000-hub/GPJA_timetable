@@ -23,8 +23,8 @@ class WidgetConfigActivity : Activity() {
 
         val prefs = getSharedPreferences("widget_prefs", Context.MODE_PRIVATE)
         val current = prefs.getString("style_$appWidgetId", "light") ?: "light"
-        val labels = arrayOf("밝은색", "다크", "컬러", "미니멀", "✨ 리퀴드 글래스")
-        val values = arrayOf("light", "dark", "color", "minimal", "glass")
+        val labels = arrayOf("밝은색", "다크", "컬러", "미니멀", "✨ 리퀴드 글래스", "투명")
+        val values = arrayOf("light", "dark", "color", "minimal", "glass", "transparent")
 
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
