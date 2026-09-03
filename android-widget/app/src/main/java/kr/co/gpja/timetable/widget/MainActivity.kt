@@ -37,8 +37,6 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ensureRole()
-
         WindowCompat.setDecorFitsSystemWindows(window, false)
         WindowInsetsControllerCompat(window, window.decorView).show(WindowInsetsCompat.Type.statusBars())
 
@@ -63,26 +61,21 @@ class MainActivity : Activity() {
             }
             webChromeClient = object : WebChromeClient() {
                 override fun onPermissionRequest(request: PermissionRequest) {
-                    if (request.origin.toString().startsWith("https://test20000-hub.github.io") &&
-                        request.resources.contains(PermissionRequest.RESOURCE_VIDEO_CAPTURE)
-                    ) {
+                    if (request.origin.toString().startsWith("https://test20000-hub.github.io") && request.resources.contains(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) {
                         if (ContextCompat.checkSelfPermission(this@MainActivity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                             runOnUiThread { request.grant(arrayOf(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) }
                         } else {
                             pendingPermissionRequest = request
                             ActivityCompat.requestPermissions(this@MainActivity, arrayOf(Manifest.permission.CAMERA), CAMERA_REQUEST_CODE)
                         }
-                    } else {
-                        runOnUiThread { request.deny() }
-                    }
+                    } else runOnUiThread { request.deny() }
                 }
             }
         }
 
         setContentView(webView)
         ViewCompat.requestApplyInsets(webView)
-        webView.loadUrl(SITE_URL)
-        UpdateChecker.check(this, BuildConfig.VERSION_NAME)
+        ensureRoleAndLoad()
 
         if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.POST_NOTIFICATIONS), NOTIFICATION_REQUEST_CODE)
@@ -90,15 +83,24 @@ class MainActivity : Activity() {
         TimetableScheduler.schedule(this)
     }
 
-    private fun ensureRole() {
-        if (prefs.contains("role")) return
+    private fun ensureRoleAndLoad() {
+        val existing = prefs.getString("role", null)
+        if (existing != null) {
+            loadSite()
+            return
+        }
         android.app.AlertDialog.Builder(this)
             .setTitle("앱 역할 선택")
             .setMessage("이 휴대폰을 관리자 앱으로 사용하시겠습니까? 관리자 앱은 다른 기기의 QR 승인 요청을 처리할 수 있습니다.")
-            .setPositiveButton("관리자 앱") { _, _ -> prefs.edit().putString("role", "admin").apply() }
-            .setNegativeButton("일반 앱") { _, _ -> prefs.edit().putString("role", "user").apply() }
+            .setPositiveButton("관리자 앱") { _, _ -> prefs.edit().putString("role", "admin").apply(); loadSite() }
+            .setNegativeButton("일반 앱") { _, _ -> prefs.edit().putString("role", "user").apply(); loadSite() }
             .setCancelable(false)
             .show()
+    }
+
+    private fun loadSite() {
+        webView.loadUrl(SITE_URL)
+        UpdateChecker.check(this, BuildConfig.VERSION_NAME)
     }
 
     private fun requestCameraPermission() {
@@ -112,11 +114,7 @@ class MainActivity : Activity() {
         if (requestCode == CAMERA_REQUEST_CODE) {
             val request = pendingPermissionRequest
             pendingPermissionRequest = null
-            if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED && request != null) {
-                request.grant(arrayOf(PermissionRequest.RESOURCE_VIDEO_CAPTURE))
-            } else {
-                request?.deny()
-            }
+            if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED && request != null) request.grant(arrayOf(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) else request?.deny()
         }
     }
 
@@ -135,14 +133,10 @@ class MainActivity : Activity() {
     }
 
     private fun showErrorPage() {
-        val root = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(48, 72, 48, 48)
-            gravity = android.view.Gravity.CENTER_HORIZONTAL
-        }
+        val root = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; setPadding(48, 72, 48, 48); gravity = android.view.Gravity.CENTER_HORIZONTAL }
         root.addView(TextView(this).apply { text = "군포중앙고 시간표"; textSize = 26f })
         root.addView(TextView(this).apply { text = "사이트를 불러오지 못했습니다.\n인터넷 연결을 확인한 뒤 다시 시도해 주세요."; textSize = 16f; setPadding(0, 24, 0, 24) })
-        root.addView(Button(this).apply { text = "다시 불러오기"; setOnClickListener { webView.loadUrl(SITE_URL) } })
+        root.addView(Button(this).apply { text = "다시 불러오기"; setOnClickListener { loadSite() } })
         setContentView(root)
     }
 
