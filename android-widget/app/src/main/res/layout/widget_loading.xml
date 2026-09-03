@@ -1,0 +1,1 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp" android:text="군포중앙고 시간표\n불러오는 중…" android:textSize="16sp" android:gravity="center_vertical" />
