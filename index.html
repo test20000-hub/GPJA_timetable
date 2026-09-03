@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#172033" />
   <meta name="description" content="군포중앙고등학교 시간표" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <title>군포중앙고 시간표</title>
 </head>
 <body>
   <main class="app">
-    <header class="topbar"><div><p class="eyebrow">GPJA TIMETABLE</p><h1>군포중앙고등학교</h1></div><button id="installBtn" class="icon-btn" hidden aria-label="앱 설치">＋</button></header>
-    <section class="toolbar card"><button id="prevWeek" class="nav-btn" aria-label="이전 주">‹</button><div class="date-heading"><strong id="weekLabel">시간표</strong><span id="updatedLabel">불러오는 중…</span></div><button id="nextWeek" class="nav-btn" aria-label="다음 주">›</button></section>
-    <section class="controls"><label class="select-wrap"><span>학년</span><select id="gradeSelect"></select></label><label class="select-wrap"><span>반</span><select id="classSelect"></select></label><button id="todayBtn" class="today-btn">오늘</button></section>
+    <header class="topbar">
+      <div><p class="eyebrow">GPJA TIMETABLE</p><h1>군포중앙고등학교</h1></div>
+      <button id="installBtn" class="icon-btn" hidden aria-label="앱 설치">＋</button>
+    </header>
+    <section class="toolbar card">
+      <button id="prevWeek" class="nav-btn" aria-label="이전 주">‹</button>
+      <div class="date-heading"><strong id="weekLabel">시간표</strong><span id="updatedLabel">불러오는 중…</span></div>
+      <button id="nextWeek" class="nav-btn" aria-label="다음 주">›</button>
+    </section>
+    <section class="controls">
+      <label class="select-wrap"><span>학년</span><select id="gradeSelect"></select></label>
+      <label class="select-wrap"><span>반</span><select id="classSelect"></select></label>
+      <button id="todayBtn" class="today-btn">오늘</button>
+    </section>
     <section id="notice" class="notice" hidden></section>
     <section id="todayCard" class="today-card card" hidden></section>
     <section id="timetable" class="timetable card" aria-live="polite"></section>
   </main>
   <footer>NEIS 고등학교시간표 · 군포중앙고등학교<br><small>© 2026 GPJA Timetable. All rights reserved.</small></footer>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=4" defer></script>
 </body>
 </html>
