@@ -22,6 +22,18 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 
 ## 버전 기록
 
+### v1.5.9
+- Android 앱 최초 실행 시 `관리자 앱` 선택만으로 관리자 권한을 얻을 수 있던 문제 수정
+- 관리자 앱 등록 전에 `ADMIN_CODE` GitHub Actions Secret과 일치하는 관리자 등록코드 입력을 요구하도록 변경
+- 관리자 등록코드는 저장소 소스 코드에 직접 기록하지 않고 GitHub Actions Secret에서 APK 빌드 시 주입
+- 기존 v1.5.8 관리자 선택 상태는 v1.5.9에서 관리자 인증 버전 검사를 거쳐 다시 등록코드를 요구하도록 변경
+- 일반 앱은 기존처럼 등록코드 없이 사용할 수 있도록 유지
+- Android 앱 versionCode `13`, versionName `1.5.9` 반영
+- GitHub Actions APK 릴리스 설정 `v1.5.9` 반영
+- 사이트 주요 페이지 풋터 버전 `v1.5.9` 동기화
+
+> 보안 참고: `ADMIN_CODE`를 APK에 빌드타임으로 주입하면 저장소에는 노출되지 않지만, APK 자체를 분석할 수 있는 사용자는 코드 추출을 시도할 수 있습니다. 따라서 이는 무단 관리자 등록을 크게 줄이는 장치이며, 고보안 인증을 위해서는 서버 측 인증 또는 하드웨어 키 기반 인증이 필요합니다.
+
 ### v1.5.8
 - GitHub Pages만 사용하는 구조에 맞춘 QR 기기 승인 센터 추가
 - Android 앱 최초 실행 시 `관리자 앱` 또는 `일반 앱` 역할 지정
@@ -113,13 +125,15 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 
 ## 현재 버전
 
-**사이트: v1.5.8**  
-**Android 앱: v1.5.8**
+**사이트: v1.5.9**  
+**Android 앱: v1.5.9**
 
 ## 최초 설정
 
 1. 저장소의 **Settings → Secrets and variables → Actions**에서 `NEIS_API_KEY`라는 Repository secret을 만들고 NEIS 인증키를 저장합니다.
-2. **Settings → Pages**에서 Source를 **GitHub Actions**로 설정합니다.
-3. **Actions → Update timetable and deploy Pages → Run workflow**를 실행합니다.
+2. 같은 위치에 `ADMIN_CODE`라는 Repository secret을 추가하고 관리자 앱 등록에 사용할 비밀 코드를 저장합니다.
+3. **Settings → Pages**에서 Source를 **GitHub Actions**로 설정합니다.
+4. **Actions → Update timetable and deploy Pages → Run workflow**를 실행합니다.
+5. Android 앱은 `Build Android Widget` 워크플로에서 `ADMIN_CODE`를 빌드타임에 주입하여 APK를 생성합니다.
 
 NEIS 공식 개발자 가이드에 따라 Open API 인증키가 필요합니다. 고등학교시간표 데이터셋은 매일 적재되며 2025학년도 이후 데이터는 기존 방식으로 사용할 수 있습니다.
