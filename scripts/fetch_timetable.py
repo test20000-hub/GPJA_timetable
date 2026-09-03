@@ -13,9 +13,16 @@ EXPECTED_SCHOOL_NAME = '군포중앙고등학교'
 
 # Temporary teacher mapping until a reliable school timetable teacher feed is connected.
 TEACHER_BY_SUBJECT = {
-    '국어': '김미경', '정보': '김기현', '영어': '여국화', '수학': '송희영',
-    '과학': '편문희', '진로': '김희정', '체육': '채승희', '사회': '김수진',
-    '한국사': '서지연', '과학탐구실험': '손지영',
+    '국어': '김미경',
+    '정보': '김기현',
+    '영어': '여국화',
+    '수학': '송희영',
+    '과학': '편문희',
+    '진로': '김희정',
+    '체육': '채승희',
+    '사회': '김수진',
+    '한국사': '서지연',
+    '과학탐구실험': '손지영',
 }
 
 
@@ -108,14 +115,19 @@ def normalize_date(value):
 
 
 def normalize_subject(subject):
-    """Collapse school subject labels such as '국어 공통1', '영어 공통2', '과학 통합1'."""
+    """Normalize subject variants such as 공통국어2, 공통영어1, 통합과학2, 국어2."""
     value = re.sub(r'\s+', '', str(subject or '').strip())
-    # Keep the more specific 과학탐구실험 label intact before generic 과학 handling.
+    if not value:
+        return ''
+
+    # Specific subject must be checked before generic 과학.
     if value.startswith('과학탐구실험'):
         return '과학탐구실험'
-    value = re.sub(r'공통[12]?$', '', value)
-    value = re.sub(r'통합[12]?$', '', value)
-    value = re.sub(r'[12]$', '', value)
+
+    # NEIS may put 공통/통합 in front of the base subject.
+    value = re.sub(r'^(공통|통합)', '', value)
+    # It may also append 1/2 (or repeated 1/2 markers).
+    value = re.sub(r'[12]+$', '', value)
     return value
 
 
@@ -151,8 +163,8 @@ def add_change_metadata(normalized, previous_rows):
         key = (row['date'], row['grade'], row['className'], row['period'])
         old = previous.get(key)
         if old is None:
-            row['change'] = {'type': 'new'}
-            changed += 1
+            # Do not mark future/newly fetched dates as "교체". A replacement can only
+            # be established when the same date/class/period existed in the old snapshot.
             continue
 
         old_subject = str(old.get('subject', '') or '').strip()
@@ -161,20 +173,29 @@ def add_change_metadata(normalized, previous_rows):
         new_subject = row['subject']
         new_room = row['room']
         new_teacher = row['teacher']
-        if old_subject != new_subject or old_room != new_room or old_teacher != new_teacher:
-            if old_subject != new_subject:
-                change_type = 'subject'
-            elif old_teacher != new_teacher:
-                change_type = 'teacher'
-            else:
-                change_type = 'room'
-            row['change'] = {
-                'type': change_type,
-                'previousSubject': old_subject,
-                'previousRoom': old_room,
-                'previousTeacher': old_teacher,
-            }
-            changed += 1
+
+        subject_changed = old_subject != new_subject
+        room_changed = old_room != new_room
+        # A blank -> mapped teacher transition is initialization, not a timetable replacement.
+        teacher_changed = bool(old_teacher and new_teacher and old_teacher != new_teacher)
+
+        if not (subject_changed or room_changed or teacher_changed):
+            continue
+
+        if subject_changed:
+            change_type = 'subject'
+        elif teacher_changed:
+            change_type = 'teacher'
+        else:
+            change_type = 'room'
+
+        row['change'] = {
+            'type': change_type,
+            'previousSubject': old_subject,
+            'previousRoom': old_room,
+            'previousTeacher': old_teacher,
+        }
+        changed += 1
     return changed
 
 
