@@ -11,8 +11,8 @@ android {
         applicationId = "kr.co.gpja.timetable.widget"
         minSdk = 26
         targetSdk = 35
-        versionCode = 9
-        versionName = "1.5.0"
+        versionCode = 10
+        versionName = "1.5.5"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
