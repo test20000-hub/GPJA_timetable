@@ -1,0 +1,20 @@
+(()=>{
+  const KEY='gpja-site-auth-v1';
+  const PASSWORD='0511';
+  const style=document.createElement('style');
+  style.textContent=`html.gpja-auth-check{visibility:hidden}body.gpja-locked{overflow:hidden}.gpja-auth-overlay{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;padding:24px;box-sizing:border-box;background:linear-gradient(145deg,#f7fbff,#e7f1ff);color:#0f172a;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}.gpja-auth-box{width:min(100%,360px);padding:30px 24px 24px;border:1px solid rgba(255,255,255,.72);border-radius:30px;background:rgba(255,255,255,.68);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:0 24px 70px rgba(15,23,42,.16);text-align:center}.gpja-auth-logo{width:64px;height:64px;object-fit:contain;margin:0 auto 16px;display:block}.gpja-auth-title{margin:0;font-size:22px;font-weight:950;letter-spacing:-.04em}.gpja-auth-sub{margin:8px 0 20px;color:#64748b;font-size:12px;font-weight:700}.gpja-auth-input{width:100%;height:50px;box-sizing:border-box;padding:0 16px;border:1px solid rgba(148,163,184,.25);border-radius:16px;background:rgba(255,255,255,.72);color:#0f172a;text-align:center;font-size:18px;font-weight:850;letter-spacing:.35em;outline:none}.gpja-auth-input:focus{border-color:#60a5fa;box-shadow:0 0 0 4px rgba(96,165,250,.14)}.gpja-auth-button{width:100%;height:48px;margin-top:10px;border:0;border-radius:16px;background:#0f172a;color:#fff;font-size:13px;font-weight:900;cursor:pointer}.gpja-auth-error{min-height:17px;margin-top:10px;color:#dc2626;font-size:11px;font-weight:800}.gpja-auth-box.shake{animation:gpjaShake .28s ease}@keyframes gpjaShake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}html.dark .gpja-auth-overlay{background:linear-gradient(145deg,#05070b,#101827);color:#f8fafc}html.dark .gpja-auth-box{background:rgba(18,22,30,.72);border-color:rgba(255,255,255,.08);box-shadow:0 24px 70px rgba(0,0,0,.42)}html.dark .gpja-auth-sub{color:#94a3b8}html.dark .gpja-auth-input{background:rgba(30,35,45,.72);border-color:rgba(255,255,255,.1);color:#f8fafc}html.dark .gpja-auth-button{background:#f8fafc;color:#0f172a}`;
+  document.head.appendChild(style);
+  document.documentElement.classList.add('gpja-auth-check');
+  const unlock=()=>{document.documentElement.classList.remove('gpja-auth-check');document.body?.classList.remove('gpja-locked')};
+  if(localStorage.getItem(KEY)==='1'){unlock();return}
+  const show=()=>{
+    document.body.classList.add('gpja-locked');
+    const overlay=document.createElement('div');overlay.className='gpja-auth-overlay';overlay.innerHTML=`<div class="gpja-auth-box"><img class="gpja-auth-logo" src="./GPJA.png" alt="GPJA"><h1 class="gpja-auth-title">군포중앙고 시간표</h1><p class="gpja-auth-sub">사이트 이용을 위해 비밀번호를 입력해주세요.</p><form class="gpja-auth-form"><input class="gpja-auth-input" type="password" inputmode="numeric" autocomplete="current-password" maxlength="4" placeholder="비밀번호" aria-label="비밀번호" required><button class="gpja-auth-button" type="submit">입장하기</button><div class="gpja-auth-error" role="alert" aria-live="polite"></div></form></div>`;
+    document.body.prepend(overlay);
+    const form=overlay.querySelector('form'),input=overlay.querySelector('input'),error=overlay.querySelector('.gpja-auth-error'),box=overlay.querySelector('.gpja-auth-box');
+    form.addEventListener('submit',e=>{e.preventDefault();if(input.value===PASSWORD){localStorage.setItem(KEY,'1');overlay.remove();unlock()}else{error.textContent='비밀번호가 올바르지 않습니다.';input.value='';input.focus();box.classList.remove('shake');void box.offsetWidth;box.classList.add('shake')}});
+    input.focus();
+    unlock();
+  };
+  if(document.body)show();else document.addEventListener('DOMContentLoaded',show,{once:true});
+})();
