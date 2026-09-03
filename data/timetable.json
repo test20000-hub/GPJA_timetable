@@ -69179,9 +69179,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험1",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -70157,9 +70157,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -71082,9 +71082,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -71099,9 +71099,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육1",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -71991,9 +71991,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -72025,9 +72025,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -73184,9 +73184,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -73201,8 +73201,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
+        "previousSubject": "한문",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -73218,9 +73218,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -73235,9 +73235,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -73252,8 +73252,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
+        "previousSubject": "진로활동",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -73269,9 +73269,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -76620,9 +76620,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육1",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -76637,9 +76637,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험1",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -76654,9 +76654,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -76671,9 +76671,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -76688,9 +76688,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -78736,8 +78736,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
+        "previousSubject": "한문",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -78753,9 +78753,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -78770,9 +78770,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -78787,9 +78787,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -78804,9 +78804,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -78821,9 +78821,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -78838,9 +78838,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -81510,9 +81510,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -81527,9 +81527,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -81544,9 +81544,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육1",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -95886,9 +95886,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -95903,8 +95903,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
+        "previousSubject": "한문",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -95920,9 +95920,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -95937,9 +95937,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -95954,8 +95954,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
+        "previousSubject": "진로활동",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -95971,9 +95971,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -109507,9 +109507,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육1",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -109524,9 +109524,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험1",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -109541,9 +109541,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -109558,9 +109558,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -109575,9 +109575,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -109592,9 +109592,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "진로",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -109609,9 +109609,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -123865,9 +123865,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -123882,9 +123882,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -123899,9 +123899,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육1",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -132287,9 +132287,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -135523,9 +135523,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -154920,9 +154920,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -156824,8 +156824,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
+        "previousSubject": "진로활동",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -159568,9 +159568,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -159602,9 +159602,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -161465,9 +161465,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -163081,9 +163081,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -163098,9 +163098,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -164032,9 +164032,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -164984,8 +164984,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
+        "previousSubject": "한문",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -167024,9 +167024,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험1",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -167946,9 +167946,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -172485,9 +172485,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -175316,9 +175316,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육1",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -175333,9 +175333,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험1",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -175350,9 +175350,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -175367,9 +175367,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -175401,9 +175401,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "진로",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -177824,8 +177824,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
+        "previousSubject": "한문",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -177841,9 +177841,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -177858,9 +177858,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -177875,9 +177875,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -177909,9 +177909,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -177926,9 +177926,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -180031,9 +180031,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -180048,9 +180048,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -180065,9 +180065,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육1",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -181388,9 +181388,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학1",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -181405,9 +181405,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어1",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -181422,8 +181422,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
+        "previousSubject": "한문",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -181439,9 +181439,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학탐구실험",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학1",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -181456,9 +181456,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -181473,9 +181473,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -183987,9 +183987,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사1",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -184004,8 +184004,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
+        "previousSubject": "한문",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -184021,9 +184021,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회1",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -184072,9 +184072,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어1",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -189867,9 +189867,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회2",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -198415,9 +198415,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육2",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -198433,8 +198433,8 @@
       "change": {
         "type": "subject",
         "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousRoom": "5",
+        "previousTeacher": "김기현"
       }
     },
     {
@@ -198449,9 +198449,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어2",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -198466,9 +198466,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학2",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -198483,9 +198483,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학2",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -198500,8 +198500,8 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "진로",
-        "previousRoom": "",
+        "previousSubject": "진로활동",
+        "previousRoom": "5",
         "previousTeacher": ""
       }
     },
@@ -198517,9 +198517,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어2",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -201137,9 +201137,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회2",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -202960,9 +202960,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회2",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -204726,9 +204726,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회2",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -204743,9 +204743,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학2",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -204760,9 +204760,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사2",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -204777,9 +204777,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어2",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -204794,9 +204794,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학탐구실험",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험2",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -204811,9 +204811,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학2",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -207158,9 +207158,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어2",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -207175,9 +207175,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육2",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -207192,9 +207192,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회2",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -207209,9 +207209,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학2",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -207226,9 +207226,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어2",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -207244,8 +207244,8 @@
       "change": {
         "type": "subject",
         "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousRoom": "5",
+        "previousTeacher": "김기현"
       }
     },
     {
@@ -220703,9 +220703,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육2",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -220799,9 +220799,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어2",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -224633,9 +224633,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사2",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -224650,9 +224650,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학2",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -227048,9 +227048,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학2",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -227065,9 +227065,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사2",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -227082,9 +227082,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어2",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -227099,9 +227099,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학탐구실험",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험2",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -256488,9 +256488,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회2",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -256505,9 +256505,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합과학2",
+        "previousRoom": "5",
+        "previousTeacher": "편문희"
       }
     },
     {
@@ -256522,9 +256522,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "한국사",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "한국사2",
+        "previousRoom": "5",
+        "previousTeacher": "서지연"
       }
     },
     {
@@ -256539,9 +256539,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어2",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -256556,9 +256556,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "과학탐구실험",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "과학탐구실험2",
+        "previousRoom": "5",
+        "previousTeacher": "손지영"
       }
     },
     {
@@ -256573,9 +256573,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학2",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -256590,9 +256590,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어2",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -259253,9 +259253,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "영어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통영어2",
+        "previousRoom": "5",
+        "previousTeacher": "여국화"
       }
     },
     {
@@ -259270,9 +259270,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "체육",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "체육2",
+        "previousRoom": "5",
+        "previousTeacher": "채승희"
       }
     },
     {
@@ -259287,9 +259287,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "사회",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "통합사회2",
+        "previousRoom": "5",
+        "previousTeacher": "김수진"
       }
     },
     {
@@ -259304,9 +259304,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "수학",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통수학2",
+        "previousRoom": "5",
+        "previousTeacher": "송희영"
       }
     },
     {
@@ -259321,9 +259321,9 @@
       "department": "일반학과",
       "change": {
         "type": "subject",
-        "previousSubject": "국어",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousSubject": "공통국어2",
+        "previousRoom": "5",
+        "previousTeacher": "김미경"
       }
     },
     {
@@ -259339,8 +259339,8 @@
       "change": {
         "type": "subject",
         "previousSubject": "정보",
-        "previousRoom": "",
-        "previousTeacher": ""
+        "previousRoom": "5",
+        "previousTeacher": "김기현"
       }
     },
     {
@@ -262338,7 +262338,7 @@
       "department": "일반학과"
     }
   ],
-  "updatedAt": "2026-09-03 08:33 UTC",
+  "updatedAt": "2026-09-03 08:36 UTC",
   "source": "NEIS 고등학교시간표 + 지정 교사 매핑",
   "schoolYear": 2026,
   "school": {
@@ -262347,12 +262347,6 @@
     "schoolCode": "7531272"
   },
   "teacherSource": "사용자 지정 과목별 교사 매핑(컴시간 연동 전 임시 적용)",
-  "defaultTimetable": {
-    "grade": "1",
-    "className": "5",
-    "semester": 2,
-    "description": "사용자 제공 2학기 기본 시간표를 변경 감지 기준으로 사용"
-  },
   "dateRange": {
     "from": "2026-03-09",
     "to": "2026-09-26"
