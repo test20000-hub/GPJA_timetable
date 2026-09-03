@@ -11,8 +11,8 @@ android {
         applicationId = "kr.co.gpja.timetable.widget"
         minSdk = 26
         targetSdk = 35
-        versionCode = 13
-        versionName = "1.5.9"
+        versionCode = 14
+        versionName = "1.6.0"
 
         val adminCode = providers.environmentVariable("ADMIN_CODE").orNull ?: ""
         val escapedAdminCode = adminCode.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r")
