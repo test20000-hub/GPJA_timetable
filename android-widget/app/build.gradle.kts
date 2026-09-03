@@ -7,6 +7,10 @@ android {
     namespace = "kr.co.gpja.timetable.widget"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "kr.co.gpja.timetable.widget"
         minSdk = 26
