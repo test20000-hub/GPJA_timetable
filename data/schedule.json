@@ -1,0 +1,1870 @@
+{
+  "rows": [
+    {
+      "date": "2026-03-01",
+      "event": "3·1절",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-02",
+      "event": "대체공휴일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-07",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-14",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-18",
+      "event": "학부모 총회",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-21",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-24",
+      "event": "전국연합학력평가",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-28",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-30",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-03-31",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-01",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-02",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-03",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-04",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-11",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-18",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-25",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-27",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-28",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-29",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-04-30",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-01",
+      "event": "노동절",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-02",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-05",
+      "event": "어린이날",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-07",
+      "event": "전국연합학력평가",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-09",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-15",
+      "event": "체육한마당",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-15",
+      "event": "현장체험학습",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-16",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-23",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-24",
+      "event": "부처님 오신 날",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-25",
+      "event": "대체공휴일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-05-30",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-03",
+      "event": "지방선거일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-04",
+      "event": "대학수학능력시험 모의평가",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-04",
+      "event": "전국연합학력평가",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-06",
+      "event": "현충일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-13",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-17",
+      "event": "학생자치회 선거",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-20",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-06-27",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-01",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-02",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-03",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-04",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-04",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-06",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-07",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-08",
+      "event": "전국연합학력평가",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-11",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-14",
+      "event": "선택과목 신청(1차)",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-15",
+      "event": "선택과목 신청(1차)",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-17",
+      "event": "제헌절",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-18",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-20",
+      "event": "하계방학식",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-21",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-22",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-23",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-24",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-25",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-25",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-26",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-27",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-28",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-29",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-30",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-07-31",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-01",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-01",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-02",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-03",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-04",
+      "event": "하계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-05",
+      "event": "개학식",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-08",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-13",
+      "event": "선택과목 신청(2차)",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-14",
+      "event": "선택과목 신청(2차)",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-15",
+      "event": "광복절",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-17",
+      "event": "대체공휴일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-22",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-25",
+      "event": "선택과목 신청(3차)",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-26",
+      "event": "선택과목 신청(3차)",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-29",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-08-31",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-01",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-02",
+      "event": "대학수학능력시험 모의평가",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-02",
+      "event": "전국연합학력평가",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-02",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-03",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-04",
+      "event": "학부모 상담주간",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-05",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-12",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-19",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-24",
+      "event": "추석",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-25",
+      "event": "추석",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-26",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-29",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-09-30",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-01",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-02",
+      "event": "1차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-03",
+      "event": "개천절",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-05",
+      "event": "대체공휴일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-09",
+      "event": "한글날",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-10",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-17",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-20",
+      "event": "전국연합학력평가",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-24",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-10-31",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-11-07",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-11-14",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-11-19",
+      "event": "대학수학능력시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-11-21",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-11-23",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-11-24",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-11-28",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-02",
+      "event": "대토론회",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-05",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-08",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-09",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-10",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-11",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-12",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-12",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-14",
+      "event": "2차 정기시험",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-18",
+      "event": "장향제(축제)",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-19",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-24",
+      "event": "졸업식",
+      "content": "",
+      "grade1": "N",
+      "grade2": "N",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-24",
+      "event": "종업식",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "N",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-25",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-25",
+      "event": "성탄절",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-26",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-26",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-27",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-28",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-29",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-30",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2026-12-31",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-01",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-01",
+      "event": "신정",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-02",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-02",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-03",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-04",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-05",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-06",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-07",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-08",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-09",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-09",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-10",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-11",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-12",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-13",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-14",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-15",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-16",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-16",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-17",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-18",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-19",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-20",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-21",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-22",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-23",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-23",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-24",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-25",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-26",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-27",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-28",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-29",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-30",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-30",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-01-31",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-01",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-02",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-03",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-04",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-05",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-06",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-06",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-07",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-07",
+      "event": "설날",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-08",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-09",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-10",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-11",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-12",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-13",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-13",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-14",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-15",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-16",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-17",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-18",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-19",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-20",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-20",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-21",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-22",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-23",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-24",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-25",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-26",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-27",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-27",
+      "event": "토요휴업일",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    },
+    {
+      "date": "2027-02-28",
+      "event": "동계방학",
+      "content": "",
+      "grade1": "Y",
+      "grade2": "Y",
+      "grade3": "Y",
+      "weekday": ""
+    }
+  ],
+  "updatedAt": "2026-09-03 09:05 UTC",
+  "source": "NEIS 학사일정",
+  "schoolYear": 2026,
+  "school": {
+    "name": "군포중앙고등학교",
+    "officeCode": "J10",
+    "schoolCode": "7531272"
+  },
+  "dateRange": {
+    "from": "2026-03-01",
+    "to": "2027-02-28"
+  }
+}
