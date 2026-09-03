@@ -66,6 +66,7 @@ class TimetableWidget : AppWidgetProvider() {
                 "color" -> Style(R.drawable.widget_bg_color, Color.rgb(15, 55, 95), Color.rgb(55, 95, 130), Color.rgb(37, 99, 235), 22f, 16)
                 "minimal" -> Style(R.drawable.widget_bg_minimal, Color.rgb(30, 30, 30), Color.rgb(100, 100, 100), Color.rgb(71, 85, 105), 20f, 13)
                 "glass" -> Style(R.drawable.widget_bg_glass, Color.WHITE, Color.rgb(235, 242, 255), Color.WHITE, 22f, 16)
+                "transparent" -> Style(android.R.color.transparent, Color.WHITE, Color.rgb(210, 210, 218), Color.WHITE, 21f, 12)
                 else -> Style(R.drawable.widget_bg_light, Color.rgb(15, 23, 42), Color.rgb(100, 116, 139), Color.rgb(37, 99, 235), 22f, 16)
             }
             v.setInt(R.id.widget_root, "setBackgroundResource", s.background)
