@@ -3,6 +3,7 @@ package kr.co.gpja.timetable.widget
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.graphics.Color
 import android.widget.RemoteViews
 import java.time.LocalTime
 
@@ -16,12 +17,18 @@ class TimetableWidget : AppWidgetProvider() {
     }
 
     companion object {
+        private const val PREFS = "widget_prefs"
+        private const val STYLE = "style"
+
         fun update(context: Context, manager: AppWidgetManager, ids: IntArray) {
             val now = LocalTime.now()
             val current = currentPeriod(now)
             val next = nextPeriod(now)
+            val style = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+                .getString(STYLE, "classic") ?: "classic"
 
             val views = RemoteViews(context.packageName, R.layout.widget_layout)
+            applyStyle(views, style)
             views.setTextViewText(R.id.widget_school, "군포중앙고 · 1학년 5반")
 
             when {
@@ -44,6 +51,32 @@ class TimetableWidget : AppWidgetProvider() {
 
             ids.forEach { manager.updateAppWidget(it, views) }
         }
+
+        fun saveStyle(context: Context, style: String) {
+            context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+                .edit().putString(STYLE, style).apply()
+            val manager = AppWidgetManager.getInstance(context)
+            update(context, manager, manager.getAppWidgetIds(
+                android.content.ComponentName(context, TimetableWidget::class.java)
+            ))
+        }
+
+        private fun applyStyle(views: RemoteViews, style: String) {
+            val (background, primary, secondary, titleSize, padding) = when (style) {
+                "dark" -> Style(Color.rgb(25, 25, 28), Color.WHITE, Color.LTGRAY, 20f, 16)
+                "minimal" -> Style(Color.rgb(245, 245, 245), Color.rgb(30, 30, 30), Color.rgb(100, 100, 100), 18f, 12)
+                else -> Style(Color.WHITE, Color.rgb(17, 17, 17), Color.rgb(100, 100, 100), 20f, 16)
+            }
+            views.setInt(R.id.widget_root, "setBackgroundColor", background)
+            views.setTextColor(R.id.widget_school, secondary)
+            views.setTextColor(R.id.widget_title, primary)
+            views.setTextColor(R.id.widget_time, secondary)
+            views.setTextColor(R.id.widget_subject, primary)
+            views.setTextViewTextSize(R.id.widget_title, android.util.TypedValue.COMPLEX_UNIT_SP, titleSize)
+            views.setViewPadding(R.id.widget_root, padding, padding, padding, padding)
+        }
+
+        private data class Style(val background: Int, val primary: Int, val secondary: Int, val titleSize: Float, val padding: Int)
 
         private fun currentPeriod(t: LocalTime): Int? = (1..7).firstOrNull { within(it, t) }
         private fun nextPeriod(t: LocalTime): Int? = (1..7).firstOrNull { t.isBefore(startTime(it)) }
