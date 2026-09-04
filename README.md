@@ -5,8 +5,8 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 ## 현재 버전
 
 - 사이트: **v2.0.4**
-- Android 앱: **v2.0.2**
-- Galaxy Watch Wear OS 앱: **v1.0.3**
+- Android 앱: **v2.0.3**
+- Galaxy Watch Wear OS 앱: **v1.0.9**
 
 ## 구성
 
@@ -24,6 +24,7 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 - 모바일 Android 앱 및 홈 화면 위젯
 - Android 위젯 실시간 현재/다음 수업 카운트다운
 - Galaxy Watch Wear OS companion 앱 및 APK/AAB CI 빌드
+- 휴대폰 ↔ Galaxy Watch 시간표/급식 양방향 동기화
 - 사이트 비밀번호 인증
 - Android 관리자 기능 + QR 기기 승인
 - QR 승인 기기 이름, 승인 시각, 토큰 만료 및 1회용 요청 관리
@@ -43,31 +44,45 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 ### v2.0.3
 - 급식 페이지에서 실제 API 응답을 받은 뒤 `esc` 함수가 정의되지 않아 전체 렌더링이 실패하던 문제 수정
 - 급식 페이지 버전/캐시 버스터 및 푸터 표기를 v2.0.3으로 동기화
-- 급식 API 호출 구조(`kschoolinfo.com/api/v1/meals`, J10/7531272)는 유지하여 기존 데이터 연동을 보존
+- Android 앱에 Wearable Data Layer 기반 휴대폰 ↔ Galaxy Watch 양방향 동기화 추가
+- 워치 동기화 요청 시 휴대폰이 시간표와 급식을 조회해 워치로 전달하고, 워치는 수신 완료 ACK를 회신
+- Android `versionCode 23`, `versionName 2.0.3` 반영
+
+### v1.0.9 — Galaxy Watch Wear OS
+- Wear OS 앱 `versionCode 10`, `versionName 1.0.9` 반영
+- Google Play Services Wearable Data Layer 기반 휴대폰 ↔ 워치 양방향 통신 구현
+- `/gpja/request/sync` 요청 → 휴대폰의 시간표/급식 조회 → `/gpja/sync` DataItem 전달 → 워치 저장/표시 → `/gpja/ack` 회신 흐름 구현
+- CI에서 양쪽 앱의 동기화 경로 및 payload 키 계약 검증
+- Release APK의 서명 상태를 `apksigner verify`로 검증하여 직접 설치 가능한 산출물만 업로드
+- Wear artifact를 `gpja-wear-os-v1.0.9`로 동기화
+
+### v1.0.8 — Galaxy Watch Wear OS
+- Wear OS APK/AAB 산출물 경로 검증 및 정규화 안정화
+- CI artifact 업로드 검증 강화
+
+### v1.0.7 — Galaxy Watch Wear OS
+- Kotlin 2.1.0 + lifecycle 2.8.7 Release lint 충돌 수정
+- `NullSafeMutableLiveData` detector 비활성화
 
 ### v1.0.3 — Galaxy Watch Wear OS
 - AndroidX 설정을 CI 실행 직전에 강제로 재생성하여 구버전 커밋/환경에서 설정이 누락되지 않도록 수정
-- 빌드 전 `android.useAndroidX=true`, Gradle 설정 파일 및 핵심 프로젝트 파일 존재 여부를 사전 검증
+- 빌드 전 핵심 프로젝트 파일 존재 여부를 검증
 - Debug APK, Release APK, Release AAB 모두 실제 파일 크기까지 검증 후 artifact 업로드
-- Wear OS 앱 `versionCode 4`, `versionName 1.0.3` 반영
 
 ### v1.0.2 — Galaxy Watch Wear OS
 - Wear OS 앱 실제 `versionName 1.0.2` 반영
 - CI에서 `android.useAndroidX=true`를 Gradle 프로퍼티로 강제 적용
-- Debug/Release APK 및 Release AAB 빌드 검증 유지
-- CI artifact 버전을 v1.0.2로 동기화
 
 ### v1.0.1 — Galaxy Watch Wear OS
 - Wear OS CI 빌드 실패 수정
 - `android.useAndroidX=true` 추가
 - Gradle/JVM/Kotlin CI 설정 추가
-- Galaxy Watch용 Debug/Release APK 및 Release AAB 빌드 구조 유지
 
 ### v1.0.0 — Galaxy Watch Wear OS
 - Wear OS companion 앱 모듈 추가
 - Galaxy Watch launcher activity 추가
 - Compose for Wear OS UI 기반 추가
-- APK/AAB Gradle 빌드 구조 추가
+- APK/AAB 빌드 구조 추가
 
 ### v2.0.2
 - Smart School 통합 대시보드 추가: 오늘 급식, 학사일정, 학교생활 바로가기
@@ -76,7 +91,6 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 - QR 승인 시스템 2.0: 기기 이름, 관리자 키/승인 요청 만료, 승인 시각 표시
 - Android 위젯에 현재 수업 종료/다음 수업 시작까지 초 단위 카운트다운 표시
 - Android `versionCode 22`, `versionName 2.0.2` 반영
-- 사이트/QR 센터 버전 표기 동기화
 
 ### v2.0.1
 - 스마트 대시보드 실시간 카운트다운과 상태 표시 개선
