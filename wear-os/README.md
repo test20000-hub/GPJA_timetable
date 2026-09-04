@@ -2,6 +2,14 @@
 
 Wear OS companion app for Galaxy Watch.
 
+## v1.0.7
+- Wear OS 앱 `versionCode 8`, `versionName 1.0.7`로 업데이트했습니다.
+- Kotlin 2.1.0 + lifecycle 2.8.7 조합에서 Release lint가 `NullSafeMutableLiveData` detector 내부의 `IncompatibleClassChangeError`로 충돌하는 문제를 수정했습니다.
+- 해당 앱에 적용되지 않는 `NullSafeMutableLiveData` lint detector를 비활성화하여 Release APK/AAB 빌드가 lint 구현 버그에 막히지 않도록 했습니다.
+- Debug APK → Release APK → Release AAB 순서로 빌드합니다.
+- 세 산출물을 `test -s`로 실제 생성 여부와 비어 있지 않은 상태까지 검증한 뒤 업로드합니다.
+- Artifact 이름을 `gpja-wear-os-v1.0.7`으로 갱신했습니다.
+
 ## v1.0.6
 - Wear OS 앱 `versionCode 7`, `versionName 1.0.6`으로 업데이트했습니다.
 - AndroidX 설정을 CI와 프로젝트 양쪽에서 명시적으로 유지합니다.
