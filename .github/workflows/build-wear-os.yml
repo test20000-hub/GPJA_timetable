@@ -10,6 +10,10 @@ on:
 permissions:
   contents: read
 
+env:
+  GRADLE_OPTS: -Dorg.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+  ANDROID_HOME: /usr/local/lib/android/sdk
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,11 +37,11 @@ jobs:
         with:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
       - name: Build Wear APK
-        run: gradle --no-daemon :app:assembleDebug
+        run: gradle --no-daemon -Pandroid.useAndroidX=true :app:assembleDebug
       - name: Build Wear release APK
-        run: gradle --no-daemon :app:assembleRelease
+        run: gradle --no-daemon -Pandroid.useAndroidX=true :app:assembleRelease
       - name: Build Wear AAB
-        run: gradle --no-daemon :app:bundleRelease
+        run: gradle --no-daemon -Pandroid.useAndroidX=true :app:bundleRelease
       - name: Verify outputs
         run: |
           test -s app/build/outputs/apk/debug/app-debug.apk
