@@ -8,7 +8,7 @@ on:
       - '.github/workflows/build-wear-os.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -46,7 +46,7 @@ jobs:
       - name: Upload Wear artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: gpja-wear-os-v1.0.0
+          name: gpja-wear-os-v1.0.2
           path: |
             wear-os/app/build/outputs/apk/debug/app-debug.apk
             wear-os/app/build/outputs/apk/release/app-release.apk
