@@ -49,7 +49,22 @@ jobs:
           test -f app/build.gradle.kts
           test -f app/src/main/AndroidManifest.xml
           test -f app/src/main/kotlin/kr/co/gpja/timetable/wear/MainActivity.kt
+          test -f app/src/main/kotlin/kr/co/gpja/timetable/wear/WearSync.kt
           gradle --version
+
+      - name: Verify phone/watch sync contract
+        run: |
+          grep -q 'PATH_SYNC = "/gpja/sync"' app/src/main/kotlin/kr/co/gpja/timetable/wear/WearSync.kt
+          grep -q 'PATH_REQUEST_SYNC = "/gpja/request/sync"' app/src/main/kotlin/kr/co/gpja/timetable/wear/WearSync.kt
+          grep -q 'PATH_ACK = "/gpja/ack"' app/src/main/kotlin/kr/co/gpja/timetable/wear/WearSync.kt
+          grep -q 'PATH_SYNC = "/gpja/sync"' ../android-widget/app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'PATH_REQUEST_SYNC = "/gpja/request/sync"' ../android-widget/app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'PATH_ACK = "/gpja/ack"' ../android-widget/app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'scheduleJson' ../android-widget/app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'mealJson' ../android-widget/app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'scheduleJson' app/src/main/kotlin/kr/co/gpja/timetable/wear/WearSync.kt
+          grep -q 'mealJson' app/src/main/kotlin/kr/co/gpja/timetable/wear/WearSync.kt
+          grep -q 'PATH_REQUEST_SYNC' app/src/main/kotlin/kr/co/gpja/timetable/wear/MainActivity.kt
 
       - name: Check Gradle configuration
         run: gradle --no-daemon --stacktrace -Pandroid.useAndroidX=true tasks --all > /tmp/wear-gradle-tasks.txt
@@ -66,27 +81,23 @@ jobs:
       - name: Verify and normalize APK/AAB outputs
         run: |
           set -euo pipefail
-
           echo 'Discovered build outputs:'
           find app/build/outputs -type f \( -name '*.apk' -o -name '*.aab' \) -size +0c -print | sort
-
           debug_apk="$(find app/build/outputs/apk/debug -type f -name '*.apk' -size +0c -print -quit)"
           release_apk="$(find app/build/outputs/apk/release -type f -name '*.apk' -size +0c -print -quit)"
           release_aab="$(find app/build/outputs/bundle/release -type f -name '*.aab' -size +0c -print -quit)"
-
           test -n "$debug_apk"
           test -n "$release_apk"
           test -n "$release_aab"
-
           mkdir -p app/build/outputs/gpja
           cp "$debug_apk" app/build/outputs/gpja/gpja-wear-os-debug.apk
           cp "$release_apk" app/build/outputs/gpja/gpja-wear-os-release.apk
           cp "$release_aab" app/build/outputs/gpja/gpja-wear-os-release.aab
-
           test -s app/build/outputs/gpja/gpja-wear-os-debug.apk
           test -s app/build/outputs/gpja/gpja-wear-os-release.apk
           test -s app/build/outputs/gpja/gpja-wear-os-release.aab
-
+          "${ANDROID_HOME}/build-tools/35.0.0/apksigner" verify --verbose app/build/outputs/gpja/gpja-wear-os-debug.apk
+          "${ANDROID_HOME}/build-tools/35.0.0/apksigner" verify --verbose app/build/outputs/gpja/gpja-wear-os-release.apk
           file app/build/outputs/gpja/gpja-wear-os-debug.apk
           file app/build/outputs/gpja/gpja-wear-os-release.apk
           file app/build/outputs/gpja/gpja-wear-os-release.aab
@@ -94,7 +105,7 @@ jobs:
       - name: Upload Wear artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: gpja-wear-os-v1.0.8
+          name: gpja-wear-os-v1.0.9
           path: |
             wear-os/app/build/outputs/gpja/gpja-wear-os-debug.apk
             wear-os/app/build/outputs/gpja/gpja-wear-os-release.apk
