@@ -35,6 +35,14 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - name: Verify phone/watch sync contract
+        run: |
+          grep -q 'PATH_SYNC = "/gpja/sync"' app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'PATH_REQUEST_SYNC = "/gpja/request/sync"' app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'PATH_ACK = "/gpja/ack"' app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'scheduleJson' app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'mealJson' app/src/main/java/kr/co/gpja/timetable/widget/WearSync.kt
+          grep -q 'com.google.android.gms:play-services-wearable:19.0.0' app/build.gradle.kts
       - name: Restore stable debug signing key
         uses: actions/cache@v4
         with:
@@ -52,7 +60,6 @@ jobs:
           test -n "$VERSION_CODE"
           echo "version_name=$VERSION_NAME" >> "$GITHUB_OUTPUT"
           echo "version_code=$VERSION_CODE" >> "$GITHUB_OUTPUT"
-          echo "Building GPJA Timetable v$VERSION_NAME (versionCode $VERSION_CODE)"
       - name: Verify APK
         run: test -s app/build/outputs/apk/debug/app-debug.apk
       - name: Prepare release APK
