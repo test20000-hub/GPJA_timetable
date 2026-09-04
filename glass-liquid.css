@@ -1,7 +1,7 @@
 /* Apple-inspired Liquid Glass layer */
 :root{--glass-bg:rgba(255,255,255,.48);--glass-strong:rgba(255,255,255,.68);--glass-border:rgba(255,255,255,.72);--glass-shadow:0 20px 55px rgba(31,70,120,.14);--blue:#1677ff}
 html{background:#dcecff!important}
-body{background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.95),transparent 32%),radial-gradient(circle at 85% 18%,rgba(126,190,255,.45),transparent 34%),linear-gradient(135deg,#d9ecff 0%,#f5f8ff 48%,#dceeff 100%)!important;background-attachment:fixed!important;color:#10233f!important}
+body{background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.95),transparent 32%),radial-gradient(circle at 85% 18%,rgba(126,190,255,.45),transparent 34%),linear-gradient(135deg,#d9ecff 0%,#f5f8ff 48%,#dceeff 100%)!important;background-attachment:fixed!important;color:#10233f!important;-webkit-font-smoothing:antialiased;min-height:100vh}
 body:before{content:"";position:fixed;inset:-20%;z-index:-1;background:radial-gradient(circle at 30% 35%,rgba(255,255,255,.7),transparent 24%),radial-gradient(circle at 70% 70%,rgba(72,151,255,.22),transparent 25%);filter:blur(45px);pointer-events:none}
 .app{padding-top:30px!important}
 .card,.week-card,.schedule-toolbar,.notification-card{background:var(--glass-bg)!important;border:1px solid var(--glass-border)!important;box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.8)!important;backdrop-filter:blur(24px) saturate(155%);-webkit-backdrop-filter:blur(24px) saturate(155%)}
@@ -60,3 +60,21 @@ html.dark .calendar-event{background:rgba(255,255,255,.07)!important;border-left
 html.dark .schedule-today .schedule-date{background:rgba(45,120,220,.16)!important;color:#a9d1ff!important}
 html.dark .scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2)!important}
 html.dark #themeToggle{color:#fff!important}
+
+/* v1.6.6 performance overrides: keep the glass aesthetic, but move expensive effects off the scrolling surface. */
+html,body{overscroll-behavior-x:none}
+body:before{contain:strict}
+.timetable{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.55)!important;contain:layout paint}
+.scroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch;contain:layout paint;transform:translateZ(0)}
+.grid{contain:layout paint;transform:translateZ(0)}
+.grid .cell{transition:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;contain:layout paint}
+.grid .head,.grid .period-cell{box-shadow:none!important}
+.grid .lesson{contain:layout paint}
+@media(max-width:700px){
+  body{background-attachment:scroll!important}
+  body:before{inset:0;filter:blur(28px)}
+  .timetable{box-shadow:none!important}
+  .scroll{scroll-snap-type:none!important}
+  .grid{will-change:scroll-position}
+}
+html.dark .timetable{box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important}
