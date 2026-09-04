@@ -2,6 +2,14 @@
 
 Wear OS companion app for Galaxy Watch.
 
+## v1.0.5
+- Wear OS 앱 `versionCode 6`, `versionName 1.0.5`로 업데이트했습니다.
+- AndroidX 설정을 CI와 프로젝트 양쪽에서 명시적으로 유지합니다.
+- Gradle configuration 단계에서 필수 프로젝트/Manifest/Activity 파일을 사전 검증합니다.
+- Debug APK → Release APK → Release AAB 순서로 빌드합니다.
+- 세 산출물을 `test -s`로 실제 생성 여부와 비어 있지 않은 상태까지 검증한 뒤 업로드합니다.
+- Artifact 이름을 `gpja-wear-os-v1.0.5`로 갱신했습니다.
+
 ## v1.0.4
 - Wear OS 앱 `versionCode 5`, `versionName 1.0.4`로 업데이트했습니다.
 - Android SDK 설치 단계를 multiline 패키지 목록으로 고정해 CI 환경별 파싱 문제를 줄였습니다.
