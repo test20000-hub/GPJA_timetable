@@ -63,21 +63,40 @@ jobs:
       - name: Build Wear release AAB
         run: gradle --no-daemon --stacktrace -Pandroid.useAndroidX=true :app:bundleRelease
 
-      - name: Verify APK and AAB outputs
+      - name: Verify and normalize APK/AAB outputs
         run: |
-          test -s app/build/outputs/apk/debug/app-debug.apk
-          test -s app/build/outputs/apk/release/app-release.apk
-          test -s app/build/outputs/bundle/release/app-release.aab
-          file app/build/outputs/apk/debug/app-debug.apk
-          file app/build/outputs/apk/release/app-release.apk
-          file app/build/outputs/bundle/release/app-release.aab
+          set -euo pipefail
+
+          echo 'Discovered build outputs:'
+          find app/build/outputs -type f \( -name '*.apk' -o -name '*.aab' \) -size +0c -print | sort
+
+          debug_apk="$(find app/build/outputs/apk/debug -type f -name '*.apk' -size +0c -print -quit)"
+          release_apk="$(find app/build/outputs/apk/release -type f -name '*.apk' -size +0c -print -quit)"
+          release_aab="$(find app/build/outputs/bundle/release -type f -name '*.aab' -size +0c -print -quit)"
+
+          test -n "$debug_apk"
+          test -n "$release_apk"
+          test -n "$release_aab"
+
+          mkdir -p app/build/outputs/gpja
+          cp "$debug_apk" app/build/outputs/gpja/gpja-wear-os-debug.apk
+          cp "$release_apk" app/build/outputs/gpja/gpja-wear-os-release.apk
+          cp "$release_aab" app/build/outputs/gpja/gpja-wear-os-release.aab
+
+          test -s app/build/outputs/gpja/gpja-wear-os-debug.apk
+          test -s app/build/outputs/gpja/gpja-wear-os-release.apk
+          test -s app/build/outputs/gpja/gpja-wear-os-release.aab
+
+          file app/build/outputs/gpja/gpja-wear-os-debug.apk
+          file app/build/outputs/gpja/gpja-wear-os-release.apk
+          file app/build/outputs/gpja/gpja-wear-os-release.aab
 
       - name: Upload Wear artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: gpja-wear-os-v1.0.6
+          name: gpja-wear-os-v1.0.8
           path: |
-            wear-os/app/build/outputs/apk/debug/app-debug.apk
-            wear-os/app/build/outputs/apk/release/app-release.apk
-            wear-os/app/build/outputs/bundle/release/app-release.aab
+            wear-os/app/build/outputs/gpja/gpja-wear-os-debug.apk
+            wear-os/app/build/outputs/gpja/gpja-wear-os-release.apk
+            wear-os/app/build/outputs/gpja/gpja-wear-os-release.aab
           if-no-files-found: error
