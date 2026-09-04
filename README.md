@@ -6,7 +6,7 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 
 - 사이트: **v2.0.2**
 - Android 앱: **v2.0.2**
-- Galaxy Watch Wear OS 앱: **v1.0.1**
+- Galaxy Watch Wear OS 앱: **v1.0.2**
 
 ## 구성
 
@@ -16,6 +16,7 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 - Smart Timetable: 현재/다음 교시, 실시간 카운트다운, 수업 진행률
 - Smart School 대시보드: 오늘 급식 + 학사일정 + 개인 설정 + 빠른 이동
 - 수업 시작 전·쉬는 시간·시간표 변경 알림 설정
+- 시간표 변경 감지 알림
 - PWA 설치 및 오프라인 캐시
 - 급식 조회 및 메뉴 검색
 - 학사일정 조회
@@ -30,6 +31,12 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 학교 정보: 시도교육청 코드 `J10`, 학교 코드 `7531272`.
 
 ## 버전 기록
+
+### v1.0.2 — Galaxy Watch Wear OS
+- Wear OS 앱 실제 `versionName 1.0.2` 반영
+- CI에서 `android.useAndroidX=true`를 Gradle 프로퍼티로 강제 적용
+- Debug/Release APK 및 Release AAB 빌드 검증 유지
+- CI artifact 버전을 v1.0.2로 동기화
 
 ### v1.0.1 — Galaxy Watch Wear OS
 - Wear OS CI 빌드 실패 수정
