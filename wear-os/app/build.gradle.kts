@@ -27,6 +27,14 @@ android {
     lint {
         disable += "NullSafeMutableLiveData"
     }
+
+    buildTypes {
+        getByName("release") {
+            // CI/test release is intentionally signed with the standard debug key so
+            // the downloaded APK is directly installable without a private keystore.
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
 }
 
 dependencies {
