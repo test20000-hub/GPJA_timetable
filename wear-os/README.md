@@ -2,6 +2,14 @@
 
 Wear OS companion app for Galaxy Watch.
 
+## v1.0.8
+- Wear OS 앱 `versionCode 9`, `versionName 1.0.8`로 업데이트했습니다.
+- v1.0.7에서 Debug/Release APK와 Release AAB 자체 빌드는 모두 성공했지만, CI의 산출물 검증 단계가 고정 파일 경로에 의존해 실패하는 문제를 수정했습니다.
+- 빌드 후 실제 `.apk`/`.aab` 파일을 탐색하고 비어 있지 않은 파일만 선별합니다.
+- CI 내부의 안정적인 파일명으로 APK 2개와 AAB 1개를 정규화한 뒤 `test -s`와 `file` 명령으로 다시 검증합니다.
+- Artifact 경로는 저장소 루트 기준의 정규화된 산출물 경로를 사용합니다.
+- Artifact 이름을 `gpja-wear-os-v1.0.8`로 갱신했습니다.
+
 ## v1.0.7
 - Wear OS 앱 `versionCode 8`, `versionName 1.0.7`로 업데이트했습니다.
 - Kotlin 2.1.0 + lifecycle 2.8.7 조합에서 Release lint가 `NullSafeMutableLiveData` detector 내부의 `IncompatibleClassChangeError`로 충돌하는 문제를 수정했습니다.
