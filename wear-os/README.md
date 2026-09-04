@@ -2,6 +2,10 @@
 
 Wear OS companion app for Galaxy Watch.
 
+## v1.0.1
+- Fixed CI build failure caused by missing `android.useAndroidX=true`.
+- Added standard Gradle JVM/Kotlin settings for reproducible CI builds.
+
 ## v1.0.0
 - Wear OS application module added
 - Galaxy Watch launcher activity added
