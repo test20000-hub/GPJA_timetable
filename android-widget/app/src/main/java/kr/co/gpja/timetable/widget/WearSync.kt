@@ -1,12 +1,12 @@
 package kr.co.gpja.timetable.widget
 
 import android.content.Context
-import com.google.android.gms.wearable.DataClient
 import com.google.android.gms.wearable.PutDataMapRequest
 import com.google.android.gms.wearable.Wearable
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 import java.time.LocalDate
@@ -63,18 +63,12 @@ object WearSync {
 
 class PhoneWearListenerService : com.google.android.gms.wearable.WearableListenerService() {
     override fun onMessageReceived(event: com.google.android.gms.wearable.MessageEvent) {
-        if (event.path != WearSync.PATH_REQUEST_SYNC) return
-        kotlinx.coroutines.CoroutineScope(Dispatchers.IO).launch {
-            runCatching { WearSync.sendSync(this@PhoneWearListenerService) }
-        }
-    }
-
-    override fun onDataChanged(events: com.google.android.gms.wearable.DataEventBuffer) {
-        events.forEach { event ->
-            if (event.type == com.google.android.gms.wearable.DataEvent.TYPE_CHANGED && event.dataItem.uri.path == WearSync.PATH_ACK) {
-                getSharedPreferences("wear_sync", Context.MODE_PRIVATE).edit()
-                    .putLong("lastAckAt", System.currentTimeMillis()).apply()
+        when (event.path) {
+            WearSync.PATH_REQUEST_SYNC -> kotlinx.coroutines.CoroutineScope(Dispatchers.IO).launch {
+                runCatching { WearSync.sendSync(this@PhoneWearListenerService) }
             }
+            WearSync.PATH_ACK -> getSharedPreferences("wear_sync", Context.MODE_PRIVATE).edit()
+                .putLong("lastAckAt", System.currentTimeMillis()).apply()
         }
     }
 }
