@@ -11,8 +11,8 @@ android {
         applicationId = "kr.co.gpja.timetable.widget"
         minSdk = 26
         targetSdk = 35
-        versionCode = 23
-        versionName = "2.0.3"
+        versionCode = 24
+        versionName = "2.0.4"
 
         val adminCode = providers.environmentVariable("ADMIN_CODE").orNull ?: ""
         val escapedAdminCode = adminCode.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r")
@@ -40,5 +40,4 @@ dependencies {
     implementation("androidx.glance:glance:1.1.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.1")
-    implementation("com.google.android.gms:play-services-wearable:19.0.0")
 }
