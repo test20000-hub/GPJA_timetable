@@ -12,8 +12,8 @@ android {
         applicationId = "kr.co.gpja.timetable.wear"
         minSdk = 30
         targetSdk = 35
-        versionCode = 7
-        versionName = "1.0.6"
+        versionCode = 8
+        versionName = "1.0.7"
     }
 
     compileOptions {
@@ -24,6 +24,13 @@ android {
     kotlinOptions { jvmTarget = "17" }
 
     buildFeatures { compose = true }
+
+    lint {
+        // lifecycle 2.8.7's NullSafeMutableLiveData detector crashes with
+        // Kotlin 2.1/UAST during release lint analysis. This detector is not
+        // applicable to this Wear OS app and is disabled to unblock release builds.
+        disable += "NullSafeMutableLiveData"
+    }
 }
 
 dependencies {
