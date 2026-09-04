@@ -1,4 +1,4 @@
-const CACHE='gpja-timetable-v14';
+const CACHE='gpja-timetable-v15';
 const ASSETS=['./','./index.html','./meal.html','./schedule.html','./approval.html','./site-auth.js','./approval.js','./theme.js','./style.css','./dark-mode.css','./glass-liquid.css','./navigation.css','./app.js','./smart-dashboard.js','./smart-school.js','./meal.js','./schedule.js','./manifest.webmanifest','./icons/icon.svg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
