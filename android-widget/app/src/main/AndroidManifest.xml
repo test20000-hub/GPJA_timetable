@@ -4,11 +4,27 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />
-    <application android:theme="@style/Theme.GPJAWidget" android:label="군포중앙고 시간표" android:icon="@drawable/ic_launcher" android:allowBackup="false" android:supportsRtl="true">
-        <receiver android:name=".TimetableWidgetReceiver" android:exported="true">
-            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/timetable_widget_info" />
+
+    <application
+        android:theme="@style/Theme.GPJAWidget"
+        android:label="군포중앙고 시간표"
+        android:icon="@drawable/ic_launcher"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+
+        <!-- The AppWidgetProvider declared in widget metadata must be the same provider
+             used by scheduled updates and AppWidgetManager queries. -->
+        <receiver
+            android:name=".TimetableWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/timetable_widget_info" />
         </receiver>
+
         <receiver android:name=".TimetableAlarmReceiver" android:exported="false" />
         <receiver android:name=".BootReceiver" android:exported="true">
             <intent-filter>
@@ -16,6 +32,7 @@
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
+
         <activity android:name=".WidgetConfigActivity" android:exported="true" />
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
