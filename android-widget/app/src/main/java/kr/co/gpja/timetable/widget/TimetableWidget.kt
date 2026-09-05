@@ -16,11 +16,14 @@ import kotlin.concurrent.thread
 
 class TimetableWidget : AppWidgetProvider() {
     override fun onUpdate(context: Context, manager: AppWidgetManager, ids: IntArray) = update(context, manager, ids)
-    override fun onEnabled(context: Context) { TimetableScheduler.schedule(context) }
+    override fun onEnabled(context: Context) {
+        try { TimetableScheduler.schedule(context.applicationContext) } catch (_: Throwable) { }
+    }
 
     companion object {
         private const val PREFS = "widget_prefs"
         private const val SUMMARY_PREFIX = "summary_"
+        private const val DEFAULT_SUMMARY = "시간표를 불러오는 중입니다"
 
         fun update(context: Context, manager: AppWidgetManager, ids: IntArray) {
             if (ids.isEmpty()) return
@@ -28,27 +31,26 @@ class TimetableWidget : AppWidgetProvider() {
             val prefs = appContext.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             val now = LocalTime.now()
 
-            // Never perform network/IO work during AppWidgetProvider.onUpdate().
-            // Home-screen launchers expect this callback to return quickly.
+            // The launcher callback is intentionally local-only and fast.
             ids.forEach { id ->
                 try {
-                    render(appContext, manager, id, now, prefs.getString("$SUMMARY_PREFIX$id", "시간표를 불러오는 중입니다") ?: "시간표를 불러오는 중입니다")
-                } catch (_: Exception) {
+                    render(appContext, manager, id, now, prefs.getString("$SUMMARY_PREFIX$id", DEFAULT_SUMMARY) ?: DEFAULT_SUMMARY)
+                } catch (_: Throwable) {
                     renderFallback(appContext, manager, id)
                 }
             }
 
-            thread(name = "gpja-widget-refresh") {
-                val summary = WidgetData.summary(appContext)
-                prefs.edit().apply {
-                    ids.forEach { putString("$SUMMARY_PREFIX$it", summary) }
-                }.apply()
+            // Network/repository work is never performed on the launcher callback thread.
+            thread(name = "gpja-widget-refresh", isDaemon = true) {
+                val summary = try { WidgetData.summary(appContext) } catch (_: Throwable) { DEFAULT_SUMMARY }
+                try {
+                    prefs.edit().apply { ids.forEach { putString("$SUMMARY_PREFIX$it", summary) } }.apply()
+                } catch (_: Throwable) { }
                 Handler(Looper.getMainLooper()).post {
-                    val refreshedNow = LocalTime.now()
                     ids.forEach { id ->
                         try {
-                            render(appContext, manager, id, refreshedNow, summary)
-                        } catch (_: Exception) {
+                            render(appContext, manager, id, LocalTime.now(), summary)
+                        } catch (_: Throwable) {
                             renderFallback(appContext, manager, id)
                         }
                     }
@@ -84,7 +86,6 @@ class TimetableWidget : AppWidgetProvider() {
                     views.setTextViewText(R.id.widget_title, "오늘 수업 종료")
                     views.setTextViewText(R.id.widget_time, "")
                     views.setTextViewText(R.id.widget_subject, "오늘 수업이 모두 끝났습니다.")
-                    views.setChronometer(R.id.widget_hint, SystemClock.elapsedRealtime(), "%s", false)
                     views.setTextViewText(R.id.widget_hint, "탭해서 내일 시간표 확인")
                 }
             }
@@ -107,7 +108,7 @@ class TimetableWidget : AppWidgetProvider() {
                 val pending = PendingIntent.getActivity(context, id, openIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
                 views.setOnClickPendingIntent(R.id.widget_root, pending)
                 manager.updateAppWidget(id, views)
-            } catch (_: Exception) { }
+            } catch (_: Throwable) { }
         }
 
         private fun setLiveCountdown(v: RemoteViews, seconds: Long) {
