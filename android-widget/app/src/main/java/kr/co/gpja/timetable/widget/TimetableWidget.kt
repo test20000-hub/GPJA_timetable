@@ -86,6 +86,7 @@ class TimetableWidget : AppWidgetProvider() {
                     views.setTextViewText(R.id.widget_title, "오늘 수업 종료")
                     views.setTextViewText(R.id.widget_time, "")
                     views.setTextViewText(R.id.widget_subject, "오늘 수업이 모두 끝났습니다.")
+                    views.setChronometer(R.id.widget_hint, 0L, "", false)
                     views.setTextViewText(R.id.widget_hint, "탭해서 내일 시간표 확인")
                 }
             }
@@ -112,8 +113,13 @@ class TimetableWidget : AppWidgetProvider() {
         }
 
         private fun setLiveCountdown(v: RemoteViews, seconds: Long) {
-            val base = SystemClock.elapsedRealtime() + seconds * 1000L
-            v.setChronometer(R.id.widget_hint, base, "남은 시간 %s", true)
+            if (seconds <= 0L) {
+                v.setChronometer(R.id.widget_hint, 0L, "", false)
+                v.setTextViewText(R.id.widget_hint, "수업 종료")
+            } else {
+                val base = SystemClock.elapsedRealtime() + seconds * 1000L
+                v.setChronometer(R.id.widget_hint, base, "남은 시간 %s", true)
+            }
         }
 
         private fun applyStyle(v: RemoteViews, style: String) {
