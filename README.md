@@ -5,7 +5,7 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 ## 현재 버전
 
 - 사이트: **v2.0.7**
-- Android 앱: **v2.0.8**
+- Android 앱: **v2.0.10**
 - Galaxy Watch Wear OS: **EOS 처리**
 
 ## 구성
@@ -31,10 +31,23 @@ NEIS 고등학교시간표를 이용하는 군포중앙고 전용 모바일 시�
 
 ## 버전 기록
 
+### v2.0.10 — Android 위젯 provider 구조 전면 정리
+- Android 앱 `versionCode 30`, `versionName 2.0.10`으로 갱신했습니다.
+- Manifest의 AppWidget provider를 `TimetableWidgetReceiver`에서 실제 `AppWidgetProvider`인 `TimetableWidget`으로 통일했습니다.
+- 예약 갱신 코드와 `AppWidgetManager`의 provider 조회 대상이 동일한 클래스가 되도록 구조를 정리했습니다.
+- 위젯 provider metadata에 `home_screen` 카테고리를 명시했습니다.
+- 위젯 추가 직후 사용하는 `initialLayout`을 최소 의존성의 `widget_loading`으로 고정했습니다.
+- 별도 설정 Activity를 위젯 추가 필수 경로에서 분리해 launcher의 추가 과정이 설정 화면/네트워크에 의존하지 않도록 했습니다.
+- 기존 백그라운드 데이터 갱신 및 예외 격리 로직은 유지했습니다.
+
+### v2.0.9 — 위젯 provider 초기 레이아웃 안정화
+- 위젯 provider의 초기 레이아웃을 `widget_loading`으로 변경했습니다.
+- 런처의 위젯 추가 콜백과 백그라운드 갱신 경로에서 예외가 발생해도 기본 UI를 유지하도록 보강했습니다.
+
 ### v2.0.8 — 위젯 추가 실패 경로 차단 및 2.0.9 롤백 유지
 - Android 앱 버전을 `versionCode 28`, `versionName 2.0.8`로 유지했습니다.
 - v2.0.9의 고정 release keystore 의존성을 제거하고 기존 v2.0.8 debug 빌드 방식으로 복구했습니다.
-- 위젯 provider의 `initialLayout`을 실제 위젯 레이아웃으로 사용하고 설정 Activity 없이 즉시 생성되도록 구성했습니다.
+- 위젯 provider를 설정 Activity 없이 즉시 생성되는 구조로 구성했습니다.
 - 런처의 위젯 추가 콜백에서 네트워크/파일 I/O가 실행되지 않도록 유지했습니다.
 - 위젯 데이터 갱신은 백그라운드에서 수행하며 실패해도 기본 위젯 UI를 유지합니다.
 - 위젯 receiver와 스케줄러 예외를 격리해 위젯 추가 과정에서 앱 프로세스가 죽지 않도록 보강했습니다.
