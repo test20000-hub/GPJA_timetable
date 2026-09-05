@@ -10,17 +10,21 @@ object WidgetData {
     private val KST = ZoneId.of("Asia/Seoul")
 
     fun summary(context: Context): String {
-        val lessons = runBlocking { TimetableRepository.today() }
-        val now = ZonedDateTime.now(KST).toLocalTime()
-        val current = currentPeriod(now)?.let { p -> lessons.firstOrNull { it.period == p } }
-        val next = nextPeriod(now)?.let { p -> lessons.firstOrNull { it.period == p } }
-        return when {
-            current != null -> current.period.toString() + "교시  " + current.subject +
-                if (current.teacher.isNotBlank()) " · " + current.teacher else ""
-            next != null -> "다음 " + next.period + "교시  " + next.subject
-            lessons.isEmpty() -> "오늘 시간표가 없습니다"
-            now.isBefore(start(1)) -> "1교시  " + (lessons.firstOrNull()?.subject ?: "미정")
-            else -> "오늘 수업이 끝났습니다"
+        return try {
+            val lessons = runBlocking { TimetableRepository.today() }
+            val now = ZonedDateTime.now(KST).toLocalTime()
+            val current = currentPeriod(now)?.let { p -> lessons.firstOrNull { it.period == p } }
+            val next = nextPeriod(now)?.let { p -> lessons.firstOrNull { it.period == p } }
+            when {
+                current != null -> current.period.toString() + "교시  " + current.subject +
+                    if (current.teacher.isNotBlank()) " · " + current.teacher else ""
+                next != null -> "다음 " + next.period + "교시  " + next.subject
+                lessons.isEmpty() -> "오늘 시간표가 없습니다"
+                now.isBefore(start(1)) -> "1교시  " + (lessons.firstOrNull()?.subject ?: "미정")
+                else -> "오늘 수업이 끝났습니다"
+            }
+        } catch (_: Exception) {
+            "시간표를 불러오는 중입니다"
         }
     }
 
