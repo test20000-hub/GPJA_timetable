@@ -3,7 +3,9 @@ package kr.co.gpja.timetable.widget
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.appwidget.AppWidgetManager
 import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
@@ -11,6 +13,12 @@ import kotlinx.coroutines.runBlocking
 
 class TimetableAlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action == ACTION_REFRESH) {
+            val manager = AppWidgetManager.getInstance(context)
+            val ids = manager.getAppWidgetIds(ComponentName(context, TimetableWidget::class.java))
+            if (ids.isNotEmpty()) TimetableWidget.update(context, manager, ids)
+            return
+        }
         if (intent.action != ACTION_NOTIFY) return
         val period = intent.getIntExtra("period", 1)
         val lessons = runBlocking { TimetableRepository.today() }
