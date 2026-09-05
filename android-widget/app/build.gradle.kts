@@ -11,13 +11,39 @@ android {
         applicationId = "kr.co.gpja.timetable.widget"
         minSdk = 26
         targetSdk = 35
-        versionCode = 28
-        versionName = "2.0.8"
+        versionCode = 29
+        versionName = "2.0.9"
 
         val adminCode = providers.environmentVariable("ADMIN_CODE").orNull ?: ""
         val escapedAdminCode = adminCode.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r")
         buildConfigField("String", "ADMIN_CODE", "\"$escapedAdminCode\"")
     }
+
+    val keystoreFile = providers.environmentVariable("SIGNING_KEYSTORE_FILE").orNull
+    val storePassword = providers.environmentVariable("SIGNING_STORE_PASSWORD").orNull
+    val keyAlias = providers.environmentVariable("SIGNING_KEY_ALIAS").orNull
+    val keyPassword = providers.environmentVariable("SIGNING_KEY_PASSWORD").orNull
+
+    signingConfigs {
+        if (!keystoreFile.isNullOrBlank() && !storePassword.isNullOrBlank() && !keyAlias.isNullOrBlank() && !keyPassword.isNullOrBlank()) {
+            create("release") {
+                storeFile = file(keystoreFile)
+                this.storePassword = storePassword
+                this.keyAlias = keyAlias
+                this.keyPassword = keyPassword
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            val releaseSigning = signingConfigs.findByName("release")
+                ?: throw GradleException("Persistent release signing is not configured. Set SIGNING_KEYSTORE_FILE, SIGNING_STORE_PASSWORD, SIGNING_KEY_ALIAS and SIGNING_KEY_PASSWORD.")
+            signingConfig = releaseSigning
+            isMinifyEnabled = false
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
